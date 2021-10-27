@@ -1,7 +1,7 @@
 ﻿
 namespace CourseworkUOG_Quiz
 {
-    partial class Home
+    partial class UserType
     {
         /// <summary>
         /// Required designer variable.
@@ -31,14 +31,13 @@ namespace CourseworkUOG_Quiz
         {
             this.SuspendLayout();
             // 
-            // Home
+            // UserType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Home";
-            this.Text = "Home";
+            this.Name = "UserType";
+            this.Text = "UserType";
             this.ResumeLayout(false);
 
         }
