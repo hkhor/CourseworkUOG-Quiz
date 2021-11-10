@@ -65,16 +65,16 @@ namespace CourseworkUOG_Quiz
             this.lblQuizId.AutoSize = true;
             this.lblQuizId.Location = new System.Drawing.Point(49, 48);
             this.lblQuizId.Name = "lblQuizId";
-            this.lblQuizId.Size = new System.Drawing.Size(50, 16);
+            this.lblQuizId.Size = new System.Drawing.Size(67, 17);
             this.lblQuizId.TabIndex = 1;
-            this.lblQuizId.Text = "Quiz ID";
+            this.lblQuizId.Text = "Quiz ID T";
             // 
             // lblAnimalCategory
             // 
             this.lblAnimalCategory.AutoSize = true;
             this.lblAnimalCategory.Location = new System.Drawing.Point(49, 87);
             this.lblAnimalCategory.Name = "lblAnimalCategory";
-            this.lblAnimalCategory.Size = new System.Drawing.Size(107, 16);
+            this.lblAnimalCategory.Size = new System.Drawing.Size(111, 17);
             this.lblAnimalCategory.TabIndex = 2;
             this.lblAnimalCategory.Text = "Animal Category";
             // 
@@ -83,7 +83,7 @@ namespace CourseworkUOG_Quiz
             this.lblAnswerType.AutoSize = true;
             this.lblAnswerType.Location = new System.Drawing.Point(49, 130);
             this.lblAnswerType.Name = "lblAnswerType";
-            this.lblAnswerType.Size = new System.Drawing.Size(87, 16);
+            this.lblAnswerType.Size = new System.Drawing.Size(90, 17);
             this.lblAnswerType.TabIndex = 3;
             this.lblAnswerType.Text = "Answer Type";
             // 
@@ -92,7 +92,7 @@ namespace CourseworkUOG_Quiz
             this.lblAnswer1.AutoSize = true;
             this.lblAnswer1.Location = new System.Drawing.Point(49, 172);
             this.lblAnswer1.Name = "lblAnswer1";
-            this.lblAnswer1.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer1.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer1.TabIndex = 4;
             this.lblAnswer1.Text = "Answer 1";
             // 
@@ -101,7 +101,7 @@ namespace CourseworkUOG_Quiz
             this.lblAnswer2.AutoSize = true;
             this.lblAnswer2.Location = new System.Drawing.Point(49, 215);
             this.lblAnswer2.Name = "lblAnswer2";
-            this.lblAnswer2.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer2.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer2.TabIndex = 5;
             this.lblAnswer2.Text = "Answer 2";
             // 
@@ -110,7 +110,7 @@ namespace CourseworkUOG_Quiz
             this.lblAnswer3.AutoSize = true;
             this.lblAnswer3.Location = new System.Drawing.Point(49, 256);
             this.lblAnswer3.Name = "lblAnswer3";
-            this.lblAnswer3.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer3.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer3.TabIndex = 6;
             this.lblAnswer3.Text = "Answer 3";
             // 
@@ -119,7 +119,7 @@ namespace CourseworkUOG_Quiz
             this.lblAnswer4.AutoSize = true;
             this.lblAnswer4.Location = new System.Drawing.Point(49, 301);
             this.lblAnswer4.Name = "lblAnswer4";
-            this.lblAnswer4.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer4.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer4.TabIndex = 7;
             this.lblAnswer4.Text = "Answer 4";
             // 
