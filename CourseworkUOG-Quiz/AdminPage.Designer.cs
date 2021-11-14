@@ -45,6 +45,10 @@ namespace CourseworkUOG_Quiz
             this.txtAns3 = new System.Windows.Forms.TextBox();
             this.txtAns4 = new System.Windows.Forms.TextBox();
             this.btnAddImage = new System.Windows.Forms.Button();
+            this.Question = new System.Windows.Forms.Label();
+            this.txtQuestion = new System.Windows.Forms.TextBox();
+            this.btnModifyImage = new System.Windows.Forms.Button();
+            this.btnDeleteImage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listQuiz
@@ -65,9 +69,9 @@ namespace CourseworkUOG_Quiz
             this.lblQuizId.AutoSize = true;
             this.lblQuizId.Location = new System.Drawing.Point(49, 48);
             this.lblQuizId.Name = "lblQuizId";
-            this.lblQuizId.Size = new System.Drawing.Size(67, 17);
+            this.lblQuizId.Size = new System.Drawing.Size(58, 17);
             this.lblQuizId.TabIndex = 1;
-            this.lblQuizId.Text = "Quiz ID T";
+            this.lblQuizId.Text = "Quiz ID ";
             // 
             // lblAnimalCategory
             // 
@@ -90,7 +94,7 @@ namespace CourseworkUOG_Quiz
             // lblAnswer1
             // 
             this.lblAnswer1.AutoSize = true;
-            this.lblAnswer1.Location = new System.Drawing.Point(49, 172);
+            this.lblAnswer1.Location = new System.Drawing.Point(49, 214);
             this.lblAnswer1.Name = "lblAnswer1";
             this.lblAnswer1.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer1.TabIndex = 4;
@@ -99,7 +103,7 @@ namespace CourseworkUOG_Quiz
             // lblAnswer2
             // 
             this.lblAnswer2.AutoSize = true;
-            this.lblAnswer2.Location = new System.Drawing.Point(49, 215);
+            this.lblAnswer2.Location = new System.Drawing.Point(49, 257);
             this.lblAnswer2.Name = "lblAnswer2";
             this.lblAnswer2.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer2.TabIndex = 5;
@@ -108,7 +112,7 @@ namespace CourseworkUOG_Quiz
             // lblAnswer3
             // 
             this.lblAnswer3.AutoSize = true;
-            this.lblAnswer3.Location = new System.Drawing.Point(49, 256);
+            this.lblAnswer3.Location = new System.Drawing.Point(49, 298);
             this.lblAnswer3.Name = "lblAnswer3";
             this.lblAnswer3.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer3.TabIndex = 6;
@@ -117,7 +121,7 @@ namespace CourseworkUOG_Quiz
             // lblAnswer4
             // 
             this.lblAnswer4.AutoSize = true;
-            this.lblAnswer4.Location = new System.Drawing.Point(49, 301);
+            this.lblAnswer4.Location = new System.Drawing.Point(49, 343);
             this.lblAnswer4.Name = "lblAnswer4";
             this.lblAnswer4.Size = new System.Drawing.Size(66, 17);
             this.lblAnswer4.TabIndex = 7;
@@ -141,6 +145,7 @@ namespace CourseworkUOG_Quiz
             this.cmbAnimalCategory.Name = "cmbAnimalCategory";
             this.cmbAnimalCategory.Size = new System.Drawing.Size(121, 24);
             this.cmbAnimalCategory.TabIndex = 9;
+            this.cmbAnimalCategory.SelectedIndexChanged += new System.EventHandler(this.cmbAnimalCategory_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -157,46 +162,84 @@ namespace CourseworkUOG_Quiz
             // 
             // txtAns1
             // 
-            this.txtAns1.Location = new System.Drawing.Point(164, 165);
+            this.txtAns1.Location = new System.Drawing.Point(164, 207);
             this.txtAns1.Name = "txtAns1";
             this.txtAns1.Size = new System.Drawing.Size(121, 22);
             this.txtAns1.TabIndex = 11;
             // 
             // txtAns2
             // 
-            this.txtAns2.Location = new System.Drawing.Point(164, 209);
+            this.txtAns2.Location = new System.Drawing.Point(164, 251);
             this.txtAns2.Name = "txtAns2";
             this.txtAns2.Size = new System.Drawing.Size(121, 22);
             this.txtAns2.TabIndex = 12;
             // 
             // txtAns3
             // 
-            this.txtAns3.Location = new System.Drawing.Point(164, 249);
+            this.txtAns3.Location = new System.Drawing.Point(164, 291);
             this.txtAns3.Name = "txtAns3";
             this.txtAns3.Size = new System.Drawing.Size(121, 22);
             this.txtAns3.TabIndex = 13;
             // 
             // txtAns4
             // 
-            this.txtAns4.Location = new System.Drawing.Point(164, 295);
+            this.txtAns4.Location = new System.Drawing.Point(164, 337);
             this.txtAns4.Name = "txtAns4";
             this.txtAns4.Size = new System.Drawing.Size(121, 22);
             this.txtAns4.TabIndex = 14;
             // 
             // btnAddImage
             // 
-            this.btnAddImage.Location = new System.Drawing.Point(164, 334);
+            this.btnAddImage.Location = new System.Drawing.Point(27, 396);
             this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(121, 24);
+            this.btnAddImage.Size = new System.Drawing.Size(97, 32);
             this.btnAddImage.TabIndex = 15;
             this.btnAddImage.Text = "Add Image";
             this.btnAddImage.UseVisualStyleBackColor = true;
+            // 
+            // Question
+            // 
+            this.Question.AutoSize = true;
+            this.Question.Location = new System.Drawing.Point(49, 175);
+            this.Question.Name = "Question";
+            this.Question.Size = new System.Drawing.Size(65, 17);
+            this.Question.TabIndex = 16;
+            this.Question.Text = "Question";
+            // 
+            // txtQuestion
+            // 
+            this.txtQuestion.Location = new System.Drawing.Point(164, 170);
+            this.txtQuestion.Name = "txtQuestion";
+            this.txtQuestion.Size = new System.Drawing.Size(121, 22);
+            this.txtQuestion.TabIndex = 17;
+            // 
+            // btnModifyImage
+            // 
+            this.btnModifyImage.Location = new System.Drawing.Point(130, 397);
+            this.btnModifyImage.Name = "btnModifyImage";
+            this.btnModifyImage.Size = new System.Drawing.Size(97, 31);
+            this.btnModifyImage.TabIndex = 18;
+            this.btnModifyImage.Text = "Modify";
+            this.btnModifyImage.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteImage
+            // 
+            this.btnDeleteImage.Location = new System.Drawing.Point(233, 397);
+            this.btnDeleteImage.Name = "btnDeleteImage";
+            this.btnDeleteImage.Size = new System.Drawing.Size(97, 31);
+            this.btnDeleteImage.TabIndex = 19;
+            this.btnDeleteImage.Text = "Delete";
+            this.btnDeleteImage.UseVisualStyleBackColor = true;
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.btnDeleteImage);
+            this.Controls.Add(this.btnModifyImage);
+            this.Controls.Add(this.txtQuestion);
+            this.Controls.Add(this.Question);
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.txtAns4);
             this.Controls.Add(this.txtAns3);
@@ -238,5 +281,9 @@ namespace CourseworkUOG_Quiz
         private System.Windows.Forms.TextBox txtAns3;
         private System.Windows.Forms.TextBox txtAns4;
         private System.Windows.Forms.Button btnAddImage;
+        private System.Windows.Forms.Label Question;
+        private System.Windows.Forms.TextBox txtQuestion;
+        private System.Windows.Forms.Button btnModifyImage;
+        private System.Windows.Forms.Button btnDeleteImage;
     }
 }

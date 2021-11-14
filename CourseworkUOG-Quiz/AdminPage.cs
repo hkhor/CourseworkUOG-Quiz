@@ -16,5 +16,10 @@ namespace CourseworkUOG_Quiz
         {
             InitializeComponent();
         }
+
+        private void cmbAnimalCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
