@@ -21,5 +21,10 @@ namespace CourseworkUOG_Quiz
         {
 
         }
+
+        private void AdminPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

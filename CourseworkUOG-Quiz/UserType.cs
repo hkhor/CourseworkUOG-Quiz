@@ -16,5 +16,10 @@ namespace CourseworkUOG_Quiz
         {
             InitializeComponent();
         }
+
+        private void UserType_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
