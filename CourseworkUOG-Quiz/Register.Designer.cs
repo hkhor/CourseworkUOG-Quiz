@@ -45,6 +45,7 @@ namespace CourseworkUOG_Quiz
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.btnBackToLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
@@ -181,6 +182,15 @@ namespace CourseworkUOG_Quiz
             this.lblFirstName.TabIndex = 15;
             this.lblFirstName.Text = "First Name";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // btnBackToLogin
             // 
             this.btnBackToLogin.Location = new System.Drawing.Point(106, 513);
@@ -197,6 +207,7 @@ namespace CourseworkUOG_Quiz
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 761);
             this.Controls.Add(this.btnBackToLogin);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtFirstName);
@@ -240,6 +251,7 @@ namespace CourseworkUOG_Quiz
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnBackToLogin;
     }
 }
