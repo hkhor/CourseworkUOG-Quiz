@@ -92,6 +92,7 @@ namespace CourseworkUOG_Quiz
             // 
             this.txtPassword.Location = new System.Drawing.Point(200, 345);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 5;
             // 
@@ -99,6 +100,7 @@ namespace CourseworkUOG_Quiz
             // 
             this.txtConfirmPassword.Location = new System.Drawing.Point(200, 380);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
+            this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(100, 20);
             this.txtConfirmPassword.TabIndex = 6;
             // 
