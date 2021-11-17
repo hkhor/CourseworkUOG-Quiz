@@ -75,6 +75,7 @@ namespace CourseworkUOG_Quiz
             if (radioButton1.Checked == true)
             {
                 var newform = new JungleAnimal();
+                button1.Dispose();
                 newform.Show();
             }
             else if (radioButton2.Checked == true)
