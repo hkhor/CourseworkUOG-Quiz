@@ -76,6 +76,7 @@ namespace CourseworkUOG_Quiz
             // 
             this.txtPassword.Location = new System.Drawing.Point(200, 316);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
             this.txtPassword.TabIndex = 4;
             // 
@@ -87,6 +88,7 @@ namespace CourseworkUOG_Quiz
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btbRegister
             // 
@@ -96,6 +98,7 @@ namespace CourseworkUOG_Quiz
             this.btbRegister.TabIndex = 6;
             this.btbRegister.Text = "First Time? Register Now";
             this.btbRegister.UseVisualStyleBackColor = true;
+            this.btbRegister.Click += new System.EventHandler(this.btbRegister_Click);
             // 
             // Login
             // 

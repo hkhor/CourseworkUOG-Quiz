@@ -33,11 +33,13 @@ namespace CourseworkUOG_Quiz
             // 
             // UserType
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(588, 375);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "UserType";
             this.Text = "UserType";
+            this.Load += new System.EventHandler(this.UserType_Load);
             this.ResumeLayout(false);
 
         }
