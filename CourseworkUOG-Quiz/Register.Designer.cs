@@ -45,6 +45,8 @@ namespace CourseworkUOG_Quiz
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblUsername = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnBackToLogin = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,7 +126,7 @@ namespace CourseworkUOG_Quiz
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(225, 475);
+            this.btnRegister.Location = new System.Drawing.Point(225, 473);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 23);
             this.btnRegister.TabIndex = 9;
@@ -180,11 +182,32 @@ namespace CourseworkUOG_Quiz
             this.lblFirstName.TabIndex = 15;
             this.lblFirstName.Text = "First Name";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnBackToLogin
+            // 
+            this.btnBackToLogin.Location = new System.Drawing.Point(106, 513);
+            this.btnBackToLogin.Name = "btnBackToLogin";
+            this.btnBackToLogin.Size = new System.Drawing.Size(194, 23);
+            this.btnBackToLogin.TabIndex = 17;
+            this.btnBackToLogin.Text = "Registered Before? Login Now!";
+            this.btnBackToLogin.UseVisualStyleBackColor = true;
+            this.btnBackToLogin.Click += new System.EventHandler(this.btnBackToLogin_Click);
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 761);
+            this.Controls.Add(this.btnBackToLogin);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblUsername);
             this.Controls.Add(this.txtFirstName);
@@ -228,5 +251,7 @@ namespace CourseworkUOG_Quiz
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnBackToLogin;
     }
 }

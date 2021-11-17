@@ -68,5 +68,12 @@ namespace CourseworkUOG_Quiz
             }
             sqlCon.Close();
         }
+
+        private void btnBackToLogin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login lgn = new Login();
+            lgn.Show();
+        }
     }
 }
