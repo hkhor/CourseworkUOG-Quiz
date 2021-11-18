@@ -30,22 +30,11 @@ namespace CourseworkUOG_Quiz
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (radioButton1.Checked == true)
-            {
-                var newform = new Animation();
-                newform.Show();
-            }
 
-            else if (radioButton2.Checked == true)
-            {
                 var newform = new Animation();
                 newform.Show();
-            }
-            else if (radioButton3.Checked == true)
-            {
-                var newform = new Animation();
-                newform.Show();
-            }
+                this.Hide();
+                
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -94,6 +83,7 @@ namespace CourseworkUOG_Quiz
             timer1.Tick += new System.EventHandler(OnTimerEvent);
 
             Load += new EventHandler(JungleAnimal_Load);
+
         }
         int counter = 0;
         int len = 0;
@@ -110,10 +100,10 @@ namespace CourseworkUOG_Quiz
             if (label1.Text == "0")
             {
                 var Question = new Question();
-                Hide();
-                Question.Show();
-                Close();
-
+                this.Hide();
+                this.Close();
+                Quiz quiz = new Quiz();
+                quiz.Show();
             }
 
             counter++;
