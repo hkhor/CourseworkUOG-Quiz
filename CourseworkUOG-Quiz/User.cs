@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CourseworkUOG_Quiz
 {
@@ -10,6 +11,10 @@ namespace CourseworkUOG_Quiz
     {
         private int userId;
         private string userName;
+        private string userType;
+        private string userFirstName;
+        private string userLastName;
+
 
         public int userID
         {
@@ -35,17 +40,61 @@ namespace CourseworkUOG_Quiz
             }
 
         }
+
+        public string userTYPE
+        {
+            get
+            {
+                return userType;
+            }
+            set
+            {
+                userType = value;
+            }
+        }
+
+        public string userFIRSTNAME
+        {
+            get
+            {
+                return userFirstName;
+            }
+            set
+            {
+                userFirstName = value;
+            }
+        }
+
+        public string userLASTNAME
+        {
+            get
+            {
+                return userLastName;
+            }
+            set
+            {
+                userLastName = value;
+            }
+        }
+
+
         public User()
         {
             this.userName = "";
+            this.userID = 0;
+            this.userType = "";
         }
 
-        public User(int userId, string userName)
-        {
-            this.userName = userName;
-            this.userID = userID;
 
-        }
+    }
+    class Player : User
+    {
+
+    }
+
+    class Admin : User
+    {
+
     }
 
 

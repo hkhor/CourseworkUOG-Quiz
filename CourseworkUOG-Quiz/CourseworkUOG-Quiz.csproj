@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
     <Compile Include="AdminPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,7 +64,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Player.cs" />
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
     </Compile>
