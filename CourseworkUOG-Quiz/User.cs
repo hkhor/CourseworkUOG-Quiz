@@ -89,12 +89,19 @@ namespace CourseworkUOG_Quiz
     }
     class Player : User
     {
-
-    }
-
-    class Admin : User
-    {
-
+        string quizCategories;
+        
+        public string quizCATEGORIES
+        {
+            get
+            {
+                return quizCategories;
+            }
+            set
+            {
+                quizCategories = value;
+            }
+        }
     }
 
 

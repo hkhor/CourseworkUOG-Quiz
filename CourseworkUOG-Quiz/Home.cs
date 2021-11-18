@@ -8,11 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+/*Import*/
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace CourseworkUOG_Quiz
 {
+    
     public partial class Home : Form
     {
+        public delegate void StoreDataCallBackFromHome(int pID,string pCategories);
+        public StoreDataCallBackFromHome StoreDataFromHome;
 
         public Home()
         {
@@ -20,24 +26,63 @@ namespace CourseworkUOG_Quiz
 
         }
 
-
-        private void Home_Load(object sender, EventArgs e)
+        Player ply = new Player();
+        private void btnStart_Click(object sender, EventArgs e)
         {
-
-
-        }
-
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
+            SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
+            
+            try
+            {
+                sqlCon.Open();
+                if (rdbAquatic.Checked == true)
+                {
+                    ply.quizCATEGORIES = "aquatic";
+                }
+                else if (rdbJungle.Checked == true)
+                {
+                    ply.quizCATEGORIES = "jungle";
+                }
+                else if (rdbBird.Checked == true)
+                {
+                    ply.quizCATEGORIES = "bird";
+                }
+                else
+                {
+                    MessageBox.Show("Please Select Categories");
+                }
+                string quizCategories = ply.quizCATEGORIES;
+                int uId = ply.userID;
+                string cmdString = "INSERT INTO player_selection(user_id, quiz_categories) VALUES (@uId, @quizCategories)";
+                SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
+                sqlCmd.Parameters.AddWithValue("@uId", "1");
+                sqlCmd.Parameters.AddWithValue("@quizCategories", "jungle");
+                sqlCmd.ExecuteNonQuery();
                 var newform = new Animation();
                 newform.Show();
                 this.Hide();
-                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+                sqlCon.Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        public void GetDatafromUserType(int pID)
+        {
+            try
+            {
+
+                ply.userID = pID;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("Are you sure you wish to quit?", "Exit Application", MessageBoxButtons.YesNo);
             if (result == System.Windows.Forms.DialogResult.Yes)
@@ -88,7 +133,7 @@ namespace CourseworkUOG_Quiz
         int counter = 0;
         int len = 0;
         string txt;
-        int timeleft = 30;
+        int timeleft = 18;
         private void OnTimerEvent(object sender, EventArgs e)
         {
             if (timeleft > 0)
@@ -99,7 +144,6 @@ namespace CourseworkUOG_Quiz
 
             if (label1.Text == "0")
             {
-                var Question = new Question();
                 this.Hide();
                 this.Close();
                 Quiz quiz = new Quiz();
@@ -116,7 +160,9 @@ namespace CourseworkUOG_Quiz
                 label2.Text = txt.Substring(0, counter);
         }
 
-        private void label1_click(object sender, EventArgs e)
+
+
+            private void label1_click(object sender, EventArgs e)
         {
 
         }
@@ -133,15 +179,5 @@ namespace CourseworkUOG_Quiz
             label2.Text = "";
         }
 
-    }
-
-    public partial class Question : Form
-    {
-
-
-        public Question()
-
-        {
-        }
     }
 }

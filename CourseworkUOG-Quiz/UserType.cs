@@ -12,6 +12,8 @@ namespace CourseworkUOG_Quiz
 {
     public partial class UserType : Form
     {
+        public delegate void StoreDataCallBackFromUserType(int pID);
+        public StoreDataCallBackFromUserType StoreDatafromUType;
         public UserType()
         {
             InitializeComponent();
@@ -44,6 +46,10 @@ namespace CourseworkUOG_Quiz
                         this.Hide();
                         Home hm = new Home();
                         hm.Show();
+                        Quiz quiz = new Quiz();
+                        this.StoreDatafromUType += new StoreDataCallBackFromUserType(hm.GetDatafromUserType);
+                        StoreDatafromUType(usr.userID);
+
                     };
                 }
                 else if (usr.userTYPE == "admin")
@@ -64,6 +70,9 @@ namespace CourseworkUOG_Quiz
                         this.Hide();
                         Home hm = new Home();
                         hm.Show();
+                        //Home  = new Quiz();
+                        this.StoreDatafromUType += new StoreDataCallBackFromUserType(hm.GetDatafromUserType);
+                        StoreDatafromUType(usr.userID);
                     };
 
                     btnAdmin.Click += (s, e) =>
@@ -77,6 +86,8 @@ namespace CourseworkUOG_Quiz
                 {
                     MessageBox.Show("Unable To Detect User Type");
                 }
+                
+                
             }
             catch (Exception ex)
             {
