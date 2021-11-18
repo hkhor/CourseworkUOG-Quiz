@@ -78,7 +78,5 @@ namespace CourseworkUOG_Quiz
             }
         }
 
-
-
     }
 }

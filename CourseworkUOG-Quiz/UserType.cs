@@ -45,7 +45,6 @@ namespace CourseworkUOG_Quiz
                         Home hm = new Home();
                         hm.Show();
                     };
-
                 }
                 else if (usr.userTYPE == "admin")
                 {
@@ -73,9 +72,6 @@ namespace CourseworkUOG_Quiz
                         AdminPage adm = new AdminPage();
                         adm.Show();
                     };
-
-
-
                 }
                 else
                 {
