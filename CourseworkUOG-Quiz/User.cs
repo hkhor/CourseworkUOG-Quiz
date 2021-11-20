@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CourseworkUOG_Quiz
 {
@@ -10,6 +11,10 @@ namespace CourseworkUOG_Quiz
     {
         private int userId;
         private string userName;
+        private string userType;
+        private string userFirstName;
+        private string userLastName;
+
 
         public int userID
         {
@@ -35,17 +40,150 @@ namespace CourseworkUOG_Quiz
             }
 
         }
+
+        public string userTYPE
+        {
+            get
+            {
+                return userType;
+            }
+            set
+            {
+                userType = value;
+            }
+        }
+
+        public string userFIRSTNAME
+        {
+            get
+            {
+                return userFirstName;
+            }
+            set
+            {
+                userFirstName = value;
+            }
+        }
+
+        public string userLASTNAME
+        {
+            get
+            {
+                return userLastName;
+            }
+            set
+            {
+                userLastName = value;
+            }
+        }
+
+
         public User()
         {
             this.userName = "";
+            this.userID = 0;
+            this.userType = "";
         }
 
-        public User(int userId, string userName)
+
+    }
+    class Player : User
+    {
+        string quizCategories;
+        string quizTitle;
+        string ans1;
+        string ans2;
+        string ans3;
+        string ans4;
+        string imgFilePath;
+        int totalOfQuiz;
+
+        public string quizCATEGORIES
         {
-            this.userName = userName;
-            this.userID = userID;
+            get
+            {
+                return quizCategories;
+            }
+            set
+            {
+                quizCategories = value;
+            }
+        }
+
+        public string quizTITLE
+        {
+            get
+            {
+                return quizTitle;
+            }
+            set
+            {
+                quizTitle = value;
+            }
+        }
+
+        public string ANS1
+        {
+            get
+            {
+                return ans1;
+            }
+            set
+            {
+                ans1 = value;
+            }
+        }
+
+        public string ANS2
+        {
+            get
+            {
+                return ans2;
+            }
+            set
+            {
+                ans2 = value;
+            }
+        }
+
+        public string ANS3
+        {
+            get
+            {
+                return ans3;
+            }
+            set
+            {
+                ans3 = value;
+            }
 
         }
+
+        public string ANS4
+        {
+            get
+            {
+                return ans4;
+            }
+            set { ans4 = value; }
+        }
+
+        public string imgFILEPATH
+        {
+            get
+            {
+                return imgFilePath;
+            }
+            set { imgFilePath = value; }
+        }
+
+        public int totalOFQUIZ
+        {
+            get { return totalOfQuiz; }
+            set { totalOfQuiz = value; }
+        }
+
+
     }
 
 

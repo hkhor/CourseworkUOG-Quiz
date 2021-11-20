@@ -15,6 +15,8 @@ namespace CourseworkUOG_Quiz
 {
     public partial class Login : Form
     {
+        public delegate void StoreDataCallBack(int uId, string uFirstName, string uLastName, string uName, string uType);
+        public StoreDataCallBack StoreData;
         public Login()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace CourseworkUOG_Quiz
             {
                 sqlCon.Open();
                 //always start with Command
-                string cmdString = "select id, name, password from users where name = @uName and password = @uPass";
+                string cmdString = "select id, firstName, lastName, name, password, type from users where name = @uName and password = @uPass";
                 SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@uName", txtUser.Text);
                 sqlCmd.Parameters.AddWithValue("@uPass", txtPassword.Text);
@@ -46,11 +48,18 @@ namespace CourseworkUOG_Quiz
                 {
                     User usr = new User();
                     usr.userID = int.Parse(read["id"].ToString());
+                    usr.userFIRSTNAME = read["firstName"].ToString();
+                    usr.userLASTNAME = read["lastName"].ToString();
                     usr.userNAME = read["name"].ToString();
+                    usr.userTYPE = read["type"].ToString();
+                    //MessageBox.Show(usr.userID + usr.userNAME + usr.userTYPE);
                     MessageBox.Show("Login Sucessfully");
-                    Home home = new Home();
+                    UserType usrTypeInterface = new UserType();
                     this.Hide();
-                    home.Show();
+                    this.StoreData += new StoreDataCallBack(usrTypeInterface.GetData);
+                    StoreData(usr.userID,usr.userFIRSTNAME,usr.userLASTNAME,usr.userNAME,usr.userTYPE);
+                    //StoreData(usr.userID);
+                    usrTypeInterface.Show();
                 }
                 else
                 {
@@ -68,5 +77,6 @@ namespace CourseworkUOG_Quiz
                 sqlCon.Close();
             }
         }
+
     }
 }

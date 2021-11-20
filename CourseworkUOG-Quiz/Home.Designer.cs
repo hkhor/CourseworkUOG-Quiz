@@ -29,109 +29,116 @@ namespace CourseworkUOG_Quiz
         /// </summary>
         private void InitializeComponent()
         {
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.rdbJungle = new System.Windows.Forms.RadioButton();
+            this.rdbBird = new System.Windows.Forms.RadioButton();
+            this.rdbAquatic = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // radioButton1
+            // rdbJungle
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.Location = new System.Drawing.Point(217, 173);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(174, 39);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "JungleAnimal";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdbJungle.AutoSize = true;
+            this.rdbJungle.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbJungle.Location = new System.Drawing.Point(145, 135);
+            this.rdbJungle.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbJungle.Name = "rdbJungle";
+            this.rdbJungle.Size = new System.Drawing.Size(172, 35);
+            this.rdbJungle.TabIndex = 2;
+            this.rdbJungle.TabStop = true;
+            this.rdbJungle.Text = "JungleAnimal";
+            this.rdbJungle.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdbBird
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(427, 173);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 39);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Bird";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdbBird.AutoSize = true;
+            this.rdbBird.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbBird.Location = new System.Drawing.Point(321, 135);
+            this.rdbBird.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbBird.Name = "rdbBird";
+            this.rdbBird.Size = new System.Drawing.Size(75, 35);
+            this.rdbBird.TabIndex = 3;
+            this.rdbBird.TabStop = true;
+            this.rdbBird.Text = "Bird";
+            this.rdbBird.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rdbAquatic
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(555, 173);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(186, 39);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "AquaticAnimal";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rdbAquatic.AutoSize = true;
+            this.rdbAquatic.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbAquatic.Location = new System.Drawing.Point(400, 135);
+            this.rdbAquatic.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbAquatic.Name = "rdbAquatic";
+            this.rdbAquatic.Size = new System.Drawing.Size(181, 35);
+            this.rdbAquatic.TabIndex = 4;
+            this.rdbAquatic.TabStop = true;
+            this.rdbAquatic.Text = "AquaticAnimal";
+            this.rdbAquatic.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe Script", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Source Sans Pro Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(236, 50);
+            this.label1.Location = new System.Drawing.Point(199, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(259, 55);
+            this.label1.Size = new System.Drawing.Size(174, 34);
             this.label1.TabIndex = 5;
             this.label1.Text = "Zoology Quiz";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe Print", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(43, 161);
+            this.label2.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(11, 137);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 49);
+            this.label2.Size = new System.Drawing.Size(119, 31);
             this.label2.TabIndex = 6;
             this.label2.Text = "Category :";
             // 
-            // button1
+            // btnStart
             // 
-            this.button1.Location = new System.Drawing.Point(153, 276);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(111, 63);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnStart.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnStart.Location = new System.Drawing.Point(110, 198);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(179, 103);
+            this.btnStart.TabIndex = 7;
+            this.btnStart.Text = "Start";
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
-            // button2
+            // btnExit
             // 
-            this.button2.Location = new System.Drawing.Point(482, 276);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(111, 63);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Exit";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnExit.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(321, 198);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(167, 103);
+            this.btnExit.TabIndex = 8;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Yellow;
-            this.ClientSize = new System.Drawing.Size(784, 461);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(588, 375);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.rdbAquatic);
+            this.Controls.Add(this.rdbBird);
+            this.Controls.Add(this.rdbJungle);
             this.Name = "Home";
             this.Text = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -139,12 +146,12 @@ namespace CourseworkUOG_Quiz
 
         #endregion
 
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton rdbJungle;
+        private System.Windows.Forms.RadioButton rdbBird;
+        private System.Windows.Forms.RadioButton rdbAquatic;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnStart;
+        private System.Windows.Forms.Button btnExit;
     }
 }
