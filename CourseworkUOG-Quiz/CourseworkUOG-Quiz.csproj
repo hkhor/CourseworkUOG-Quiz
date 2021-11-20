@@ -53,6 +53,7 @@
     <Compile Include="AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="calculation.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
