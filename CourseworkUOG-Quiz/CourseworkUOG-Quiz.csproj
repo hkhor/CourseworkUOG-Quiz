@@ -52,6 +52,12 @@
     <Compile Include="AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="CalculateScore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CalculateScore.Designer.cs">
+      <DependentUpon>CalculateScore.cs</DependentUpon>
+    </Compile>
     <Compile Include="Question.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
