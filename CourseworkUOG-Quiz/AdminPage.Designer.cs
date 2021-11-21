@@ -29,7 +29,6 @@ namespace CourseworkUOG_Quiz
         /// </summary>
         private void InitializeComponent()
         {
-            this.listQuiz = new System.Windows.Forms.ListBox();
             this.lblQuizId = new System.Windows.Forms.Label();
             this.lblAnimalCategory = new System.Windows.Forms.Label();
             this.lblAnswerType = new System.Windows.Forms.Label();
@@ -39,7 +38,7 @@ namespace CourseworkUOG_Quiz
             this.lblAnswer4 = new System.Windows.Forms.Label();
             this.txtQuizID = new System.Windows.Forms.TextBox();
             this.cmbAnimalCategory = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbAnswerType = new System.Windows.Forms.ComboBox();
             this.txtAns1 = new System.Windows.Forms.TextBox();
             this.txtAns2 = new System.Windows.Forms.TextBox();
             this.txtAns3 = new System.Windows.Forms.TextBox();
@@ -50,21 +49,12 @@ namespace CourseworkUOG_Quiz
             this.btnModifyImage = new System.Windows.Forms.Button();
             this.btnDeleteImage = new System.Windows.Forms.Button();
             this.btnInsert = new System.Windows.Forms.Button();
+            this.dataGridViewQuestionList = new System.Windows.Forms.DataGridView();
+            this.lblFileName = new System.Windows.Forms.Label();
+            this.lblRealAnswer = new System.Windows.Forms.Label();
+            this.txtRealAnswer = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestionList)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listQuiz
-            // 
-            this.listQuiz.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.listQuiz.FormattingEnabled = true;
-            this.listQuiz.ItemHeight = 16;
-            this.listQuiz.Location = new System.Drawing.Point(389, 48);
-            this.listQuiz.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.listQuiz.Name = "listQuiz";
-            this.listQuiz.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.listQuiz.Size = new System.Drawing.Size(396, 436);
-            this.listQuiz.TabIndex = 0;
             // 
             // lblQuizId
             // 
@@ -134,6 +124,7 @@ namespace CourseworkUOG_Quiz
             this.txtQuizID.Location = new System.Drawing.Point(164, 42);
             this.txtQuizID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuizID.Name = "txtQuizID";
+            this.txtQuizID.ReadOnly = true;
             this.txtQuizID.Size = new System.Drawing.Size(121, 22);
             this.txtQuizID.TabIndex = 8;
             // 
@@ -141,28 +132,27 @@ namespace CourseworkUOG_Quiz
             // 
             this.cmbAnimalCategory.FormattingEnabled = true;
             this.cmbAnimalCategory.Items.AddRange(new object[] {
-            "Bird",
-            "Mammal",
-            "Fish"});
+            "jungle",
+            "bird",
+            "aquatic"});
             this.cmbAnimalCategory.Location = new System.Drawing.Point(164, 79);
             this.cmbAnimalCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbAnimalCategory.Name = "cmbAnimalCategory";
-            this.cmbAnimalCategory.Size = new System.Drawing.Size(121, 24);
+            this.cmbAnimalCategory.Size = new System.Drawing.Size(122, 24);
             this.cmbAnimalCategory.TabIndex = 9;
-            this.cmbAnimalCategory.SelectedIndexChanged += new System.EventHandler(this.cmbAnimalCategory_SelectedIndexChanged);
             // 
-            // comboBox1
+            // cmbAnswerType
             // 
-            this.comboBox1.DisplayMember = "Mutliple";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbAnswerType.DisplayMember = "Mutliple";
+            this.cmbAnswerType.FormattingEnabled = true;
+            this.cmbAnswerType.Items.AddRange(new object[] {
             "Mutliple",
             "Fill"});
-            this.comboBox1.Location = new System.Drawing.Point(164, 122);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 10;
+            this.cmbAnswerType.Location = new System.Drawing.Point(164, 122);
+            this.cmbAnswerType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAnswerType.Name = "cmbAnswerType";
+            this.cmbAnswerType.Size = new System.Drawing.Size(122, 24);
+            this.cmbAnswerType.TabIndex = 10;
             // 
             // txtAns1
             // 
@@ -198,13 +188,14 @@ namespace CourseworkUOG_Quiz
             // 
             // btnAddImage
             // 
-            this.btnAddImage.Location = new System.Drawing.Point(189, 388);
+            this.btnAddImage.Location = new System.Drawing.Point(232, 459);
             this.btnAddImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddImage.Name = "btnAddImage";
             this.btnAddImage.Size = new System.Drawing.Size(97, 32);
             this.btnAddImage.TabIndex = 15;
             this.btnAddImage.Text = "Add Image";
             this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
             // Question
             // 
@@ -220,44 +211,88 @@ namespace CourseworkUOG_Quiz
             this.txtQuestion.Location = new System.Drawing.Point(164, 170);
             this.txtQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(121, 22);
+            this.txtQuestion.Size = new System.Drawing.Size(288, 22);
             this.txtQuestion.TabIndex = 17;
             // 
             // btnModifyImage
             // 
-            this.btnModifyImage.Location = new System.Drawing.Point(131, 454);
+            this.btnModifyImage.Location = new System.Drawing.Point(129, 519);
             this.btnModifyImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnModifyImage.Name = "btnModifyImage";
             this.btnModifyImage.Size = new System.Drawing.Size(97, 31);
             this.btnModifyImage.TabIndex = 18;
             this.btnModifyImage.Text = "Modify";
             this.btnModifyImage.UseVisualStyleBackColor = true;
+            this.btnModifyImage.Click += new System.EventHandler(this.btnModifyImage_Click);
             // 
             // btnDeleteImage
             // 
-            this.btnDeleteImage.Location = new System.Drawing.Point(233, 454);
+            this.btnDeleteImage.Location = new System.Drawing.Point(232, 519);
             this.btnDeleteImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteImage.Name = "btnDeleteImage";
             this.btnDeleteImage.Size = new System.Drawing.Size(97, 31);
             this.btnDeleteImage.TabIndex = 19;
             this.btnDeleteImage.Text = "Delete";
             this.btnDeleteImage.UseVisualStyleBackColor = true;
+            this.btnDeleteImage.Click += new System.EventHandler(this.btnDeleteImage_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(28, 454);
+            this.btnInsert.Location = new System.Drawing.Point(26, 519);
             this.btnInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(97, 31);
             this.btnInsert.TabIndex = 20;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
+            // 
+            // dataGridViewQuestionList
+            // 
+            this.dataGridViewQuestionList.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridViewQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewQuestionList.Location = new System.Drawing.Point(481, 42);
+            this.dataGridViewQuestionList.Name = "dataGridViewQuestionList";
+            this.dataGridViewQuestionList.RowTemplate.Height = 24;
+            this.dataGridViewQuestionList.Size = new System.Drawing.Size(800, 606);
+            this.dataGridViewQuestionList.TabIndex = 21;
+            this.dataGridViewQuestionList.Click += new System.EventHandler(this.dataGridViewQuestionList_Click);
+            // 
+            // lblFileName
+            // 
+            this.lblFileName.Location = new System.Drawing.Point(49, 467);
+            this.lblFileName.Name = "lblFileName";
+            this.lblFileName.Size = new System.Drawing.Size(184, 18);
+            this.lblFileName.TabIndex = 22;
+            this.lblFileName.Text = "FileName";
+            // 
+            // lblRealAnswer
+            // 
+            this.lblRealAnswer.Location = new System.Drawing.Point(49, 391);
+            this.lblRealAnswer.Name = "lblRealAnswer";
+            this.lblRealAnswer.Size = new System.Drawing.Size(87, 23);
+            this.lblRealAnswer.TabIndex = 23;
+            this.lblRealAnswer.Text = "Real Answer";
+            // 
+            // txtRealAnswer
+            // 
+            this.txtRealAnswer.Location = new System.Drawing.Point(164, 388);
+            this.txtRealAnswer.Name = "txtRealAnswer";
+            this.txtRealAnswer.Size = new System.Drawing.Size(121, 22);
+            this.txtRealAnswer.TabIndex = 24;
             // 
             // AdminPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(825, 529);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.Controls.Add(this.txtRealAnswer);
+            this.Controls.Add(this.lblRealAnswer);
+            this.Controls.Add(this.lblFileName);
+            this.Controls.Add(this.dataGridViewQuestionList);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.btnDeleteImage);
             this.Controls.Add(this.btnModifyImage);
@@ -268,7 +303,7 @@ namespace CourseworkUOG_Quiz
             this.Controls.Add(this.txtAns3);
             this.Controls.Add(this.txtAns2);
             this.Controls.Add(this.txtAns1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbAnswerType);
             this.Controls.Add(this.cmbAnimalCategory);
             this.Controls.Add(this.txtQuizID);
             this.Controls.Add(this.lblAnswer4);
@@ -278,19 +313,16 @@ namespace CourseworkUOG_Quiz
             this.Controls.Add(this.lblAnswerType);
             this.Controls.Add(this.lblAnimalCategory);
             this.Controls.Add(this.lblQuizId);
-            this.Controls.Add(this.listQuiz);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AdminPage";
             this.Text = "AdminPage";
-            this.Load += new System.EventHandler(this.AdminPage_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestionList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listQuiz;
         private System.Windows.Forms.Label lblQuizId;
         private System.Windows.Forms.Label lblAnimalCategory;
         private System.Windows.Forms.Label lblAnswerType;
@@ -300,7 +332,7 @@ namespace CourseworkUOG_Quiz
         private System.Windows.Forms.Label lblAnswer4;
         private System.Windows.Forms.TextBox txtQuizID;
         private System.Windows.Forms.ComboBox cmbAnimalCategory;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbAnswerType;
         private System.Windows.Forms.TextBox txtAns1;
         private System.Windows.Forms.TextBox txtAns2;
         private System.Windows.Forms.TextBox txtAns3;
@@ -311,5 +343,9 @@ namespace CourseworkUOG_Quiz
         private System.Windows.Forms.Button btnModifyImage;
         private System.Windows.Forms.Button btnDeleteImage;
         private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.DataGridView dataGridViewQuestionList;
+        private System.Windows.Forms.Label lblFileName;
+        private System.Windows.Forms.Label lblRealAnswer;
+        private System.Windows.Forms.TextBox txtRealAnswer;
     }
 }

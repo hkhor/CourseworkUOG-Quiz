@@ -178,4 +178,11 @@ namespace CourseworkUOG_Quiz
 
         public double Score { get { return score; }set{ score = value; } }
     }
+
+   class Admin : User
+    {
+        private string imgFilePath;
+
+        public string ImgFilePath { get { return imgFilePath; } set { imgFilePath = value; } }
+    }
 }

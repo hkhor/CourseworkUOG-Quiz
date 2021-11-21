@@ -50,9 +50,9 @@ namespace CourseworkUOG_Quiz
             // btnPastPerformance
             // 
             this.btnPastPerformance.Font = new System.Drawing.Font("Open Sans", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPastPerformance.Location = new System.Drawing.Point(273, 318);
+            this.btnPastPerformance.Location = new System.Drawing.Point(662, 237);
             this.btnPastPerformance.Name = "btnPastPerformance";
-            this.btnPastPerformance.Size = new System.Drawing.Size(229, 132);
+            this.btnPastPerformance.Size = new System.Drawing.Size(200, 120);
             this.btnPastPerformance.TabIndex = 1;
             this.btnPastPerformance.Text = "View Past Score";
             this.btnPastPerformance.UseVisualStyleBackColor = true;
@@ -62,7 +62,7 @@ namespace CourseworkUOG_Quiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 462);
+            this.ClientSize = new System.Drawing.Size(874, 462);
             this.Controls.Add(this.btnPastPerformance);
             this.Controls.Add(this.lblTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

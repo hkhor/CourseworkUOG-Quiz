@@ -42,9 +42,11 @@ namespace CourseworkUOG_Quiz
                 {
                     Button btnUser = new Button();
                     btnUser.Text = "Play Game";
+                    btnUser.Font = new Font("Open Sans", 16, FontStyle.Bold);
+                    btnUser.Size = new Size(150, 100);
+                    btnUser.Location = new Point(100, 200);
                     btnUser.AutoSize = true;
-                    btnUser.Font = new Font("Open Sans", 18);
-                    btnUser.Location = new Point(200, 200);
+                    
                     this.Controls.Add(btnUser);
                     btnUser.Click += (s, e) => {
                         this.Hide();
@@ -61,14 +63,16 @@ namespace CourseworkUOG_Quiz
                     Button btnUser = new Button();
                     btnUser.Text = "Play Game";
                     btnUser.AutoSize = true;
-                    btnUser.Font = new Font("Open Sans", 18);
-                    btnUser.Location = new Point(150, 200);
+                    btnUser.Font = new Font("Open Sans", 16, FontStyle.Bold);
+                    btnUser.Size = new Size(150, 100);
+                    btnUser.Location = new Point(10, 230);
                     this.Controls.Add(btnUser);
                     Button btnAdmin = new Button();
                     btnAdmin.Text = "Edit Quiz";
                     btnAdmin.AutoSize = true;
-                    btnAdmin.Font = new Font("Open Sans", 18);
-                    btnAdmin.Location = new Point(300, 200);
+                    btnAdmin.Font = new Font("Open Sans", 16, FontStyle.Bold);
+                    btnAdmin.Size = new Size(150, 100);
+                    btnAdmin.Location = new Point(180, 230);
                     this.Controls.Add(btnAdmin);
                     btnUser.Click += (s, e) => {
                         this.Hide();
@@ -85,6 +89,7 @@ namespace CourseworkUOG_Quiz
                         AdminPage adm = new AdminPage();
                         adm.Show();
                     };
+                    btnPastPerformance.Location = new Point(320,250);
                 }
                 else
                 {

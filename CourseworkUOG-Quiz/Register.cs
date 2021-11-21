@@ -66,7 +66,8 @@ namespace CourseworkUOG_Quiz
                 MessageBox.Show(ex.Message);
 
             }
-            sqlCon.Close();
+            finally { sqlCon.Close(); }
+            
         }
 
         private void btnBackToLogin_Click(object sender, EventArgs e)
