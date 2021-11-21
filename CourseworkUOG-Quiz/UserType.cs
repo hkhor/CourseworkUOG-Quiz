@@ -14,6 +14,10 @@ namespace CourseworkUOG_Quiz
     {
         public delegate void StoreDataCallBackFromUserType(int pID);
         public StoreDataCallBackFromUserType StoreDatafromUType;
+
+        public delegate void StoreDataCallBackForChart(int uID);
+        public StoreDataCallBackForChart StoreDataForChart;
+        User usr = new User();
         public UserType()
         {
             InitializeComponent();
@@ -25,7 +29,7 @@ namespace CourseworkUOG_Quiz
         {
             try
             {
-                User usr = new User();
+
                 usr.userID = uID;
                 usr.userFIRSTNAME = uFirstName;
                 usr.userLASTNAME = uLastName;
@@ -95,5 +99,14 @@ namespace CourseworkUOG_Quiz
             }
         }
 
+        private void btnPastPerformance_Click(object sender, EventArgs e)
+        {
+            PerformanceChart performanceChartLah = new PerformanceChart();
+            this.Hide();
+            this.StoreDataForChart += new StoreDataCallBackForChart(performanceChartLah.GetDataFromUserType);
+            StoreDataForChart(usr.userID);
+            //StoreData(usr.userID);
+            performanceChartLah.Show();
+        }
     }
 }

@@ -28,6 +28,20 @@ namespace CourseworkUOG_Quiz
         }
 
         Player ply = new Player();
+
+        public void GetDatafromUserType(int pID)
+        {
+            try
+            {
+
+                ply.userID = pID;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnStart_Click(object sender, EventArgs e)
         {
             SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
@@ -55,7 +69,7 @@ namespace CourseworkUOG_Quiz
                 int uId = ply.userID;
                 string cmdString = "INSERT INTO player_selection(user_id, quiz_categories) VALUES (@uId, @quizCategories)";
                 SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
-                sqlCmd.Parameters.AddWithValue("@uId", "1");
+                sqlCmd.Parameters.AddWithValue("@uId", uId);
                 sqlCmd.Parameters.AddWithValue("@quizCategories", "jungle");
                 sqlCmd.ExecuteNonQuery();
                 var newform = new Animation();
@@ -69,19 +83,7 @@ namespace CourseworkUOG_Quiz
                 sqlCon.Close();
         }
 
-        public void GetDatafromUserType(int pID)
-        {
-            try
-            {
 
-                ply.userID = pID;
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {

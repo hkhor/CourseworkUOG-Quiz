@@ -89,17 +89,19 @@ namespace CourseworkUOG_Quiz
     }
     class Player : User
     {
-        int noOfQuestion;
-        string quizCategories;
-        string quizQuestion;
-        string ans1;
-        string ans2;
-        string ans3;
-        string ans4;
-        string realAnswer;
-        string selectedAnswer;
-        string ansCorrectOrWrong;
-
+        private int noOfQuestion;
+        private string quizCategories;
+        private string quizQuestion;
+        private string ans1;
+        private string ans2;
+        private string ans3;
+        private string ans4;
+        private string realAnswer;
+        private string selectedAnswer;
+        private string ansCorrectOrWrong;
+        private int totalOfQuestion;
+        private int correctOfQuestion;
+        private double score;
 
         public int noOFQUESTION { get { return noOfQuestion; } set { noOfQuestion = value; } }
         public string quizCATEGORIES { get { return quizCategories; } set { quizCategories = value; } }
@@ -169,5 +171,11 @@ namespace CourseworkUOG_Quiz
         public string selectedANSWER { get { return selectedAnswer; } set { selectedAnswer = value; } }
 
         public string AnsCorrectWrong { get { return ansCorrectOrWrong; } set { ansCorrectOrWrong = value; } }
+
+        public int TotalOfQuestion { get { return totalOfQuestion; } set { totalOfQuestion = value; } }
+
+        public int CorrectOfQuestion { get { return correctOfQuestion; } set { correctOfQuestion = value; } }
+
+        public double Score { get { return score; }set{ score = value; } }
     }
 }

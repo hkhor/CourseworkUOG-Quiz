@@ -36,7 +36,7 @@ namespace CourseworkUOG_Quiz
             {
                 sqlCon.Open();
                 //always start with Command
-                string cmdString = "select user_id, quiz_categories from player_selection order by id DESC";
+                string cmdString = "select user_id, quiz_categories from player_selection order by id ASC";
                 SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
                 SqlDataReader read = sqlCmd.ExecuteReader();
                while (read.Read())
@@ -44,7 +44,7 @@ namespace CourseworkUOG_Quiz
                     ply.userID = int.Parse(read["user_id"].ToString());
                     ply.quizCATEGORIES = read["quiz_categories"].ToString();
                 }
-
+                MessageBox.Show(ply.userID.ToString() + ply.quizCATEGORIES);
             }
             catch(Exception ex)
             {
@@ -137,13 +137,13 @@ namespace CourseworkUOG_Quiz
             if (counter != 14) {
                 if (btnAns1.Text != qtn.realANSWER)
                 {
-                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
+                    ply.AnsCorrectWrong = "WRONG";
                 }
                 else
                 {
-                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
+                    ply.AnsCorrectWrong = "CORRECT";
                 }
 
                 ply.selectedANSWER = btnAns1.Text;
@@ -172,13 +172,13 @@ namespace CourseworkUOG_Quiz
             {
                 if (btnAns2.Text != qtn.realANSWER)
                 {
-                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
+                    ply.AnsCorrectWrong = "WRONG";
                 }
                 else
                 {
-                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
+                    ply.AnsCorrectWrong = "CORRECT";
                 }
 
                 ply.selectedANSWER = btnAns2.Text;
@@ -209,13 +209,13 @@ namespace CourseworkUOG_Quiz
             {
                 if (btnAns3.Text != qtn.realANSWER)
                 {
-                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
+                    ply.AnsCorrectWrong = "WRONG";
                 }
                 else
                 {
-                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
+                    ply.AnsCorrectWrong = "CORRECT";
                 }
 
                 ply.selectedANSWER = btnAns3.Text;
@@ -245,13 +245,13 @@ namespace CourseworkUOG_Quiz
             {
                 if (btnAns4.Text != qtn.realANSWER)
                 {
-                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
+                    ply.AnsCorrectWrong = "WRONG";
                 }
                 else
                 {
-                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
+                    ply.AnsCorrectWrong = "CORRECT";
                 }
 
                 ply.selectedANSWER = btnAns4.Text;
@@ -281,13 +281,13 @@ namespace CourseworkUOG_Quiz
             {
                 if (txtFillAnswer.Text != qtn.realANSWER)
                 {
-                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
+                    ply.AnsCorrectWrong = "WRONG";
                 }
                 else
                 {
-                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
+                    ply.AnsCorrectWrong = "CORRECT";
                 }
 
                 ply.selectedANSWER = btnAns5.Text;
@@ -298,6 +298,7 @@ namespace CourseworkUOG_Quiz
                 ply.ANS3 = qtn.ansORDER3;
                 ply.ANS4 = qtn.ansORDER4;
                 ply.realANSWER = qtn.realANSWER;
+                
                 InsertAnsweredQuestionInSQL();
                 SetCategories();
                 counter++;
@@ -319,9 +320,10 @@ namespace CourseworkUOG_Quiz
             try
             {
                 sqlCon.Open();
-                string cmdString = "INSERT INTO score(userId,quizQuestion,ans1,ans2,ans3,ans4,realAnswer,selectedAnswer) VALUES (@userId, @quizQuestion, @ans1, @ans2, @ans3, @ans4, @realAnswer, @selectedAnswer)";
+                string cmdString = "INSERT INTO score(sId,userId,quizQuestion,ans1,ans2,ans3,ans4,realAnswer,selectedAnswer,ansCorrectOrWrong) VALUES (@sId,@userId, @quizQuestion, @ans1, @ans2, @ans3, @ans4, @realAnswer, @selectedAnswer,@ansCorrectOrWrong)";
                 SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
                 //sqlCmd.Parameters.AddWithValue("@sId", ply.noOFQUESTION);
+                sqlCmd.Parameters.AddWithValue("@sId",(counter+1));
                 sqlCmd.Parameters.AddWithValue("@userId", ply.userID);
                 sqlCmd.Parameters.AddWithValue("@quizQuestion", ply.quizQUESTION);
                 sqlCmd.Parameters.AddWithValue("@ans1", ply.ANS1);

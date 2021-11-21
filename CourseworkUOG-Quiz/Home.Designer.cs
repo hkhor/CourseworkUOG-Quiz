@@ -42,8 +42,8 @@ namespace CourseworkUOG_Quiz
             // 
             this.rdbJungle.AutoSize = true;
             this.rdbJungle.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbJungle.Location = new System.Drawing.Point(145, 135);
-            this.rdbJungle.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbJungle.Location = new System.Drawing.Point(193, 166);
+            this.rdbJungle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbJungle.Name = "rdbJungle";
             this.rdbJungle.Size = new System.Drawing.Size(172, 35);
             this.rdbJungle.TabIndex = 2;
@@ -55,8 +55,8 @@ namespace CourseworkUOG_Quiz
             // 
             this.rdbBird.AutoSize = true;
             this.rdbBird.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbBird.Location = new System.Drawing.Point(321, 135);
-            this.rdbBird.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbBird.Location = new System.Drawing.Point(407, 166);
+            this.rdbBird.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbBird.Name = "rdbBird";
             this.rdbBird.Size = new System.Drawing.Size(75, 35);
             this.rdbBird.TabIndex = 3;
@@ -68,8 +68,8 @@ namespace CourseworkUOG_Quiz
             // 
             this.rdbAquatic.AutoSize = true;
             this.rdbAquatic.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbAquatic.Location = new System.Drawing.Point(400, 135);
-            this.rdbAquatic.Margin = new System.Windows.Forms.Padding(2);
+            this.rdbAquatic.Location = new System.Drawing.Point(533, 166);
+            this.rdbAquatic.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdbAquatic.Name = "rdbAquatic";
             this.rdbAquatic.Size = new System.Drawing.Size(181, 35);
             this.rdbAquatic.TabIndex = 4;
@@ -82,8 +82,7 @@ namespace CourseworkUOG_Quiz
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Source Sans Pro Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(199, 33);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(318, 43);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 34);
             this.label1.TabIndex = 5;
@@ -93,8 +92,7 @@ namespace CourseworkUOG_Quiz
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 137);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(15, 169);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 31);
             this.label2.TabIndex = 6;
@@ -103,10 +101,10 @@ namespace CourseworkUOG_Quiz
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(110, 198);
-            this.btnStart.Margin = new System.Windows.Forms.Padding(2);
+            this.btnStart.Location = new System.Drawing.Point(193, 242);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(179, 103);
+            this.btnStart.Size = new System.Drawing.Size(239, 127);
             this.btnStart.TabIndex = 7;
             this.btnStart.Text = "Start";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -115,10 +113,10 @@ namespace CourseworkUOG_Quiz
             // btnExit
             // 
             this.btnExit.Font = new System.Drawing.Font("Source Sans Pro SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(321, 198);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(2);
+            this.btnExit.Location = new System.Drawing.Point(466, 242);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(167, 103);
+            this.btnExit.Size = new System.Drawing.Size(223, 127);
             this.btnExit.TabIndex = 8;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -126,10 +124,10 @@ namespace CourseworkUOG_Quiz
             // 
             // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(588, 375);
+            this.ClientSize = new System.Drawing.Size(784, 462);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label2);
@@ -137,6 +135,7 @@ namespace CourseworkUOG_Quiz
             this.Controls.Add(this.rdbAquatic);
             this.Controls.Add(this.rdbBird);
             this.Controls.Add(this.rdbJungle);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Home";
             this.Text = "Home";
             this.ResumeLayout(false);
