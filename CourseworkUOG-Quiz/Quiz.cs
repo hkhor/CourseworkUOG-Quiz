@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
 
+
 namespace CourseworkUOG_Quiz
 {
     public partial class Quiz : Form
@@ -18,14 +19,13 @@ namespace CourseworkUOG_Quiz
         Player ply = new Player();
         Question qtn = new Question();
         public int counter;
-        
+
         SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
         public Quiz()
         {
             InitializeComponent();
             GetPlayerSelectionFromDatabase();
             SetCategories();
-            //RandomQuestion();
         }
         public void GetPlayerSelectionFromDatabase()
         {
@@ -82,6 +82,7 @@ namespace CourseworkUOG_Quiz
                     qtn.imgFILEPATH = read["imgFilePath"].ToString();
 
                 }
+                lblTitle.Text = "Question" + (counter + 1);
                 if (qtn.quizTYPE == "Mutliple")
                 {
                     //MessageBox.Show(qtn.imgFILEPATH);
@@ -136,12 +137,24 @@ namespace CourseworkUOG_Quiz
             if (counter != 14) {
                 if (btnAns1.Text != qtn.realANSWER)
                 {
+                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
                 }
                 else
                 {
+                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
                 }
+
+                ply.selectedANSWER = btnAns1.Text;
+                ply.noOFQUESTION = counter + 1;
+                ply.quizQUESTION = qtn.quizQUESTION;
+                ply.ANS1 = qtn.ansORDER1;
+                ply.ANS2 = qtn.ansORDER2;
+                ply.ANS3 = qtn.ansORDER3;
+                ply.ANS4 = qtn.ansORDER4;
+                ply.realANSWER = qtn.realANSWER;
+                InsertAnsweredQuestionInSQL();
                 SetCategories();
                 counter++;
             }
@@ -159,13 +172,26 @@ namespace CourseworkUOG_Quiz
             {
                 if (btnAns2.Text != qtn.realANSWER)
                 {
+                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
                 }
                 else
                 {
+                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
                 }
+
+                ply.selectedANSWER = btnAns2.Text;
+                ply.noOFQUESTION = counter + 1;
+                ply.quizQUESTION = qtn.quizQUESTION;
+                ply.ANS1 = qtn.ansORDER1;
+                ply.ANS2 = qtn.ansORDER2;
+                ply.ANS3 = qtn.ansORDER3;
+                ply.ANS4 = qtn.ansORDER4;
+                ply.realANSWER = qtn.realANSWER;
+                InsertAnsweredQuestionInSQL();
                 SetCategories();
+
                 counter++;
             }
             else
@@ -183,12 +209,24 @@ namespace CourseworkUOG_Quiz
             {
                 if (btnAns3.Text != qtn.realANSWER)
                 {
+                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
                 }
                 else
                 {
+                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
                 }
+
+                ply.selectedANSWER = btnAns3.Text;
+                ply.noOFQUESTION = counter + 1;
+                ply.quizQUESTION = qtn.quizQUESTION;
+                ply.ANS1 = qtn.ansORDER1;
+                ply.ANS2 = qtn.ansORDER2;
+                ply.ANS3 = qtn.ansORDER3;
+                ply.ANS4 = qtn.ansORDER4;
+                ply.realANSWER = qtn.realANSWER;
+                InsertAnsweredQuestionInSQL();
                 SetCategories();
                 counter++;
             }
@@ -207,12 +245,23 @@ namespace CourseworkUOG_Quiz
             {
                 if (btnAns4.Text != qtn.realANSWER)
                 {
+                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
                 }
                 else
                 {
+                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
                 }
+
+                ply.selectedANSWER = btnAns4.Text;
+                ply.noOFQUESTION = counter + 1;
+                ply.quizQUESTION = qtn.quizQUESTION;
+                ply.ANS1 = qtn.ansORDER1;
+                ply.ANS2 = qtn.ansORDER2;
+                ply.ANS3 = qtn.ansORDER3;
+                ply.ANS4 = qtn.ansORDER4;
+                ply.realANSWER = qtn.realANSWER;
                 SetCategories();
                 counter++;
             }
@@ -231,12 +280,24 @@ namespace CourseworkUOG_Quiz
             {
                 if (txtFillAnswer.Text != qtn.realANSWER)
                 {
+                    ply.selectedANSWER = "WRONG";
                     MessageBox.Show("Wrong!");
                 }
                 else
                 {
+                    ply.selectedANSWER = "CORRECT";
                     MessageBox.Show("Correct!");
                 }
+
+                ply.selectedANSWER = btnAns5.Text;
+                ply.noOFQUESTION = counter + 1;
+                ply.quizQUESTION = qtn.quizQUESTION;
+                ply.ANS1 = qtn.ansORDER1;
+                ply.ANS2 = qtn.ansORDER2;
+                ply.ANS3 = qtn.ansORDER3;
+                ply.ANS4 = qtn.ansORDER4;
+                ply.realANSWER = qtn.realANSWER;
+                InsertAnsweredQuestionInSQL();
                 SetCategories();
                 counter++;
             }
@@ -247,6 +308,38 @@ namespace CourseworkUOG_Quiz
                 Score score = new Score();
                 score.Show();
 
+            }
+        }
+        public void InsertAnsweredQuestionInSQL()
+        {
+            //Data Source = server name
+            //Initial Catalog = database name
+            SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
+            try
+            {
+                sqlCon.Open();
+                string cmdString = "INSERT INTO score(userId,quizQuestion,ans1,ans2,ans3,ans4,realAnswer,selectedAnswer) VALUES (@userId, @quizQuestion, @ans1, @ans2, @ans3, @ans4, @realAnswer, @selectedAnswer)";
+                SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
+                //sqlCmd.Parameters.AddWithValue("@sId", ply.noOFQUESTION);
+                sqlCmd.Parameters.AddWithValue("@userId", ply.userID);
+                sqlCmd.Parameters.AddWithValue("@quizQuestion", ply.quizQUESTION);
+                sqlCmd.Parameters.AddWithValue("@ans1", ply.ANS1);
+                sqlCmd.Parameters.AddWithValue("@ans2", ply.ANS2);
+                sqlCmd.Parameters.AddWithValue("@ans3", ply.ANS3);
+                sqlCmd.Parameters.AddWithValue("@ans4", ply.ANS4);
+                sqlCmd.Parameters.AddWithValue("realAnswer", ply.realANSWER);
+                sqlCmd.Parameters.AddWithValue("selectedAnswer", ply.realANSWER);
+                sqlCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            finally
+            {
+                sqlCon.Close();
             }
         }
     }

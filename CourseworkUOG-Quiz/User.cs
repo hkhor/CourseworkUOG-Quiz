@@ -89,36 +89,29 @@ namespace CourseworkUOG_Quiz
     }
     class Player : User
     {
+        int noOfQuestion;
         string quizCategories;
-        string quizTitle;
+        string quizQuestion;
         string ans1;
         string ans2;
         string ans3;
         string ans4;
-        string imgFilePath;
-        int totalOfQuiz;
+        string realAnswer;
+        string selectedAnswer;
 
-        public string quizCATEGORIES
+
+        public int noOFQUESTION { get { return noOfQuestion; } set { noOfQuestion = value; } }
+        public string quizCATEGORIES { get { return quizCategories; } set { quizCategories = value; } }
+
+        public string quizQUESTION
         {
             get
             {
-                return quizCategories;
+                return quizQuestion;
             }
             set
             {
-                quizCategories = value;
-            }
-        }
-
-        public string quizTITLE
-        {
-            get
-            {
-                return quizTitle;
-            }
-            set
-            {
-                quizTitle = value;
+                quizQuestion = value;
             }
         }
 
@@ -168,23 +161,30 @@ namespace CourseworkUOG_Quiz
             set { ans4 = value; }
         }
 
-        public string imgFILEPATH
+        public string realANSWER
         {
-            get
-            {
-                return imgFilePath;
-            }
-            set { imgFilePath = value; }
+            get { return realAnswer; } set { realAnswer = value; }
         }
-
-        public int totalOFQUIZ
-        {
-            get { return totalOfQuiz; }
-            set { totalOfQuiz = value; }
-        }
-
+        public string selectedANSWER { get { return selectedAnswer; } set { selectedAnswer = value; } }
 
     }
+
+
+
+    interface ICalFunction
+    {
+        void calculateScore();
+    }
+
+    class CalculateScore : ICalFunction
+    {
+        public void calculateScore()
+        {
+
+        }
+    }
+
+    
 
 
 }
