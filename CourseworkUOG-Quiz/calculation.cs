@@ -6,49 +6,42 @@ using System.Threading.Tasks;
 
 namespace CourseworkUOG_Quiz
 {
-    interface calculation
-    { 
+    interface Calculation1
+    {
         void score(int a);
-        
+        void scorePercentage(int a);
+
+        void AveragePercentage(int a);
     }
 
-
-    class ImplementationResult : calculation
+    public class ImplementationCalculation : Calculation1
     {
-        // a is stand for total correctly question that you got
         public void score(int a)
         {
-           
-                Console.WriteLine((int)Math.Round((double)(a * 100) / totalQuestions));
-            
+            Console.WriteLine(a);
         }
-     
+
+        public void scorePercentage(int a)
+        {
+            //Console.WriteLine(a * 100 % / totalQuestion);
+
+        }
+
+        public void AveragePercentage(int a)
+        {
+            Console.WriteLine(a / 1);
+        }
 
         static void main()
         {
-            ImplementationResult obj = new ImplementationResult();
-            calculation i = obj;
-            i.score((10 * 100) / totalQuestion); 
+            ImplementationCalculation obj = new ImplementationCalculation();
+            Calculation1 i = obj;
+            i.score(5); i.scorePercentage(5); i.AveragePercentage(5);
             Console.ReadLine();
-            Console.WriteLine("Would you like to exit? (Y = yes, N = No):");
-            while (Console.ReadLine().ToUpper() == "N") ;
-            Console.WriteLine("Bye");
+            Console.WriteLine("Would you like to Exit? (Y = yes, N = No):");
+            while (Console.ReadLine().ToUpper() == "Y") ;
+            Console.WriteLine("bye");
             Console.ReadKey();
-
-              
-            
-           
         }
-
     }
-
 }
-
-
-
-
-
- 
-
-    
-
