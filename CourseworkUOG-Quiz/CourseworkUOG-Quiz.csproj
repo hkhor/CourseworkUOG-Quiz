@@ -123,6 +123,9 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Score.resx">
+      <DependentUpon>Score.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserType.resx">
       <DependentUpon>UserType.cs</DependentUpon>
     </EmbeddedResource>
