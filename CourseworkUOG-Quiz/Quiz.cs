@@ -262,6 +262,7 @@ namespace CourseworkUOG_Quiz
                 ply.ANS3 = qtn.ansORDER3;
                 ply.ANS4 = qtn.ansORDER4;
                 ply.realANSWER = qtn.realANSWER;
+                InsertAnsweredQuestionInSQL();
                 SetCategories();
                 counter++;
             }
@@ -327,8 +328,9 @@ namespace CourseworkUOG_Quiz
                 sqlCmd.Parameters.AddWithValue("@ans2", ply.ANS2);
                 sqlCmd.Parameters.AddWithValue("@ans3", ply.ANS3);
                 sqlCmd.Parameters.AddWithValue("@ans4", ply.ANS4);
-                sqlCmd.Parameters.AddWithValue("realAnswer", ply.realANSWER);
-                sqlCmd.Parameters.AddWithValue("selectedAnswer", ply.realANSWER);
+                sqlCmd.Parameters.AddWithValue("@realAnswer", ply.realANSWER);
+                sqlCmd.Parameters.AddWithValue("@selectedAnswer", ply.realANSWER);
+                sqlCmd.Parameters.AddWithValue("")
                 sqlCmd.ExecuteNonQuery();
 
             }

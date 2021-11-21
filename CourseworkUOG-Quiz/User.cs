@@ -98,6 +98,7 @@ namespace CourseworkUOG_Quiz
         string ans4;
         string realAnswer;
         string selectedAnswer;
+        string ansCorrectOrWrong;
 
 
         public int noOFQUESTION { get { return noOfQuestion; } set { noOfQuestion = value; } }
@@ -167,24 +168,6 @@ namespace CourseworkUOG_Quiz
         }
         public string selectedANSWER { get { return selectedAnswer; } set { selectedAnswer = value; } }
 
+        public string AnsCorrectWrong { get { return ansCorrectOrWrong; } set { ansCorrectOrWrong = value; } }
     }
-
-
-
-    interface ICalFunction
-    {
-        void calculateScore();
-    }
-
-    class CalculateScore : ICalFunction
-    {
-        public void calculateScore()
-        {
-
-        }
-    }
-
-    
-
-
 }
