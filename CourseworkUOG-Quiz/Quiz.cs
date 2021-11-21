@@ -17,6 +17,7 @@ namespace CourseworkUOG_Quiz
     {
         Player ply = new Player();
         Question qtn = new Question();
+        public int counter;
         
         SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
         public Quiz()
@@ -83,8 +84,14 @@ namespace CourseworkUOG_Quiz
                 }
                 if (qtn.quizTYPE == "Mutliple")
                 {
+                    //MessageBox.Show(qtn.imgFILEPATH);
                     txtFillAnswer.Hide();
                     btnAns5.Hide();
+                    btnAns1.Show();
+                    btnAns2.Show();
+                    btnAns3.Show();
+                    btnAns4.Show();
+                    picBox.Image = new Bitmap(qtn.imgFILEPATH);
                     lblQuestion.Text = qtn.quizQUESTION;
                     btnAns1.Text = qtn.ansORDER1;
                     btnAns2.Text = qtn.ansORDER2;
@@ -93,83 +100,23 @@ namespace CourseworkUOG_Quiz
                 }
                 else if (qtn.quizTYPE == "Fill")
                 {
-                    txtFillAnswer.Text = "Enter Answer Here";
-                    lblQuestion.Text = qtn.quizQUESTION;
-                    btnAns5.Text = "Submit";
+                    //MessageBox.Show(qtn.imgFILEPATH);
                     btnAns1.Hide();
                     btnAns2.Hide();
                     btnAns3.Hide();
                     btnAns4.Hide();
-
-                }
-                /*else
-                {
-                    MessageBox.Show("Program Logic Error GGWP");
-                }
-                */
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                sqlCon.Close();
-            }
-
-            /*Random r = new Random();
-            int index = r.Next(qID.Count);
-            //string randomQuestionId = qID[1];
-            int randomQuestionId = 3;
-            Question qtn = new Question();*/
-            /*
-            try
-            {
-                sqlCon.Open();
-                //always start with Command
-                string cmdString = "SELECT quizType, quizQuestion, ansOrder1, ansOrder2, ansOrder3, ansOrder4, realAnswer, imgFilePath FROM questions where qId = @qId";
-                SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
-                sqlCmd.Parameters.AddWithValue("@qId", randomQuestionId);
-                //SqlDataReader = read or retrieve data from database
-                SqlDataReader read = sqlCmd.ExecuteReader();
-
-                while (read.Read())
-                {
-                    qtn.quizTYPE = read["quizType"].ToString();
-                    qtn.quizQUESTION = read["quizQuestion"].ToString();
-                    qtn.ansORDER1 = read["ansOrder1"].ToString();
-                    qtn.ansORDER2 = read["ansOrder2"].ToString();
-                    qtn.ansORDER3 = read["ansOrder3"].ToString();
-                    qtn.ansORDER4 = read["ansOrder4"].ToString();
-                    qtn.realANSWER = read["realAnswer"].ToString();
-                    qtn.imgFILEPATH = read["imgFilePath"].ToString();
-
-                }
-                if (qtn.quizTYPE == "Mutliple")
-                {
-                    txtFillAnswer.Hide();
-                    btnAns5.Hide();
-                    lblQuestion.Text = qtn.quizQUESTION;
-                    btnAns1.Text = qtn.ansORDER1;
-                    btnAns2.Text = qtn.ansORDER2;
-                    btnAns3.Text = qtn.ansORDER3;
-                    btnAns4.Text = qtn.ansORDER4;
-                }
-                else if (qtn.quizTYPE == "Fill")
-                {
+                    txtFillAnswer.Show();
+                    lblQuestion.Show();
+                    btnAns5.Show();
+                    picBox.Image = new Bitmap(qtn.imgFILEPATH);
                     txtFillAnswer.Text = "Enter Answer Here";
                     lblQuestion.Text = qtn.quizQUESTION;
                     btnAns5.Text = "Submit";
-                    btnAns1.Hide();
-                    btnAns2.Hide();
-                    btnAns3.Hide();
-                    btnAns4.Hide();
-
+                   
                 }
                 else
                 {
-                    MessageBox.Show("Program Logic Error GGWP");
+                    MessageBox.Show("Progam Logic Error");
                 }
 
             }
@@ -180,13 +127,127 @@ namespace CourseworkUOG_Quiz
             finally
             {
                 sqlCon.Close();
+            }    
+
+        }
+
+        private void btnAns1_Click(object sender, EventArgs e)
+        {
+            if (counter != 14) {
+                if (btnAns1.Text != qtn.realANSWER)
+                {
+                    MessageBox.Show("Wrong!");
+                }
+                else
+                {
+                    MessageBox.Show("Correct!");
+                }
+                SetCategories();
+                counter++;
             }
-            */
+            else{
+                counter = 0;
+                this.Hide();
+                Score score = new Score();
+                score.Show();
+            }
+        }
 
+        private void btnAns2_Click(object sender, EventArgs e)
+        {
+            if (counter != 14)
+            {
+                if (btnAns2.Text != qtn.realANSWER)
+                {
+                    MessageBox.Show("Wrong!");
+                }
+                else
+                {
+                    MessageBox.Show("Correct!");
+                }
+                SetCategories();
+                counter++;
+            }
+            else
+            {
+                counter = 0;
+                this.Hide();
+                Score score = new Score();
+                score.Show();
+            }
+        }
 
-            
+        private void btnAns3_Click(object sender, EventArgs e)
+        {
+            if (counter != 14)
+            {
+                if (btnAns3.Text != qtn.realANSWER)
+                {
+                    MessageBox.Show("Wrong!");
+                }
+                else
+                {
+                    MessageBox.Show("Correct!");
+                }
+                SetCategories();
+                counter++;
+            }
+            else
+            {
+                counter = 0;
+                this.Hide();
+                Score score = new Score();
+                score.Show();
+            }
+        }
 
+        private void btnAns4_Click(object sender, EventArgs e)
+        {
+            if (counter != 14)
+            {
+                if (btnAns4.Text != qtn.realANSWER)
+                {
+                    MessageBox.Show("Wrong!");
+                }
+                else
+                {
+                    MessageBox.Show("Correct!");
+                }
+                SetCategories();
+                counter++;
+            }
+            else
+            {
+                counter = 0;
+                this.Hide();
+                Score score = new Score();
+                score.Show();
+            }
+        }
 
+        private void btnAns5_Click(object sender, EventArgs e)
+        {
+            if (counter != 14)
+            {
+                if (txtFillAnswer.Text != qtn.realANSWER)
+                {
+                    MessageBox.Show("Wrong!");
+                }
+                else
+                {
+                    MessageBox.Show("Correct!");
+                }
+                SetCategories();
+                counter++;
+            }
+            else
+            {
+                counter = 0;
+                this.Hide();
+                Score score = new Score();
+                score.Show();
+
+            }
         }
     }
 }

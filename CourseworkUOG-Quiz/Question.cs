@@ -26,7 +26,7 @@ namespace CourseworkUOG_Quiz
         public string ansORDER3 { get { return ansOrder3; } set { ansOrder3 = value; } }
         public string ansORDER4 { get { return ansOrder4; } set { ansOrder4 = value; } }
         public string realANSWER { get { return realAnswer; } set { realAnswer = value; } }
-        public string imgFILEPATH { get { return imgFilePath; } set { realAnswer = value; } }
+        public string imgFILEPATH { get { return imgFilePath; } set { imgFilePath = value; } }
     }
 
 }
