@@ -58,6 +58,7 @@
     <Compile Include="CalculateScore.Designer.cs">
       <DependentUpon>CalculateScore.cs</DependentUpon>
     </Compile>
+    <Compile Include="Calculation1.cs" />
     <Compile Include="Question.cs" />
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
