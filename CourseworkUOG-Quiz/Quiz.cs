@@ -330,7 +330,7 @@ namespace CourseworkUOG_Quiz
                 sqlCmd.Parameters.AddWithValue("@ans4", ply.ANS4);
                 sqlCmd.Parameters.AddWithValue("@realAnswer", ply.realANSWER);
                 sqlCmd.Parameters.AddWithValue("@selectedAnswer", ply.realANSWER);
-                sqlCmd.Parameters.AddWithValue("")
+                sqlCmd.Parameters.AddWithValue("@ansCorrectOrWrong", ply.AnsCorrectWrong);
                 sqlCmd.ExecuteNonQuery();
 
             }

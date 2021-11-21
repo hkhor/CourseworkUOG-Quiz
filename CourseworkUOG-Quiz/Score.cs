@@ -39,7 +39,7 @@ namespace CourseworkUOG_Quiz
             }
 
   
-            }
+        }
 
         private void Score_Paint(object sender, PaintEventArgs e)
         {
@@ -57,19 +57,20 @@ namespace CourseworkUOG_Quiz
             t.Abort();
             t.Join();
         }
-    }
-  
-  }   
-
 
         private void Score_Load(object sender, EventArgs e)
         {
 
-            SqlCommand cmdString = new SqlCommand("SELECT * FROM score",sqlCon);
+            SqlCommand cmdString = new SqlCommand("SELECT * FROM score", sqlCon);
             SqlDataAdapter da = new SqlDataAdapter(cmdString);
             DataTable table = new DataTable();
             da.Fill(table);
             dataGridViewShowAnsweredQuestion.DataSource = table;
         }
-    }
+
+    }   
+
+
+        
+
 }
