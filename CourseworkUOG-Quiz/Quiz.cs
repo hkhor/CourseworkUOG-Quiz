@@ -26,8 +26,9 @@ namespace CourseworkUOG_Quiz
             InitializeComponent();
             GetPlayerSelectionFromDatabase();
             SetCategories();
+            //SetQuestion();
         }
-        public void GetPlayerSelectionFromDatabase()
+        private void GetPlayerSelectionFromDatabase()
         {
             //Data Source = server name
             //Initial Catalog = database name
@@ -44,7 +45,7 @@ namespace CourseworkUOG_Quiz
                     ply.userID = int.Parse(read["user_id"].ToString());
                     ply.quizCATEGORIES = read["quiz_categories"].ToString();
                 }
-                MessageBox.Show(ply.userID.ToString() + ply.quizCATEGORIES);
+                //MessageBox.Show(ply.userID.ToString() + ply.quizCATEGORIES);
             }
             catch(Exception ex)
             {
@@ -56,7 +57,7 @@ namespace CourseworkUOG_Quiz
             }
         }
 
-        public void SetCategories()
+        private void SetCategories()
         {
 
             try
@@ -82,6 +83,7 @@ namespace CourseworkUOG_Quiz
                     qtn.imgFILEPATH = read["imgFilePath"].ToString();
 
                 }
+
                 lblTitle.Text = "Question" + (counter + 1);
                 if (qtn.quizTYPE == "Mutliple")
                 {
@@ -113,12 +115,13 @@ namespace CourseworkUOG_Quiz
                     txtFillAnswer.Text = "Enter Answer Here";
                     lblQuestion.Text = qtn.quizQUESTION;
                     btnAns5.Text = "Submit";
-                   
+
                 }
                 else
                 {
-                    MessageBox.Show("Progam Logic Error");
+                    MessageBox.Show("Show Me Some Error");
                 }
+
 
             }
             catch (Exception ex)
@@ -130,6 +133,18 @@ namespace CourseworkUOG_Quiz
                 sqlCon.Close();
             }    
 
+        }
+
+        private void SetQuestion()
+        {
+            try
+            {
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAns1_Click(object sender, EventArgs e)
@@ -156,6 +171,7 @@ namespace CourseworkUOG_Quiz
                 ply.realANSWER = qtn.realANSWER;
                 InsertAnsweredQuestionInSQL();
                 SetCategories();
+                //SetQuestion();
                 counter++;
             }
             else{
@@ -191,7 +207,7 @@ namespace CourseworkUOG_Quiz
                 ply.realANSWER = qtn.realANSWER;
                 InsertAnsweredQuestionInSQL();
                 SetCategories();
-
+                //SetQuestion();
                 counter++;
             }
             else
@@ -228,6 +244,7 @@ namespace CourseworkUOG_Quiz
                 ply.realANSWER = qtn.realANSWER;
                 InsertAnsweredQuestionInSQL();
                 SetCategories();
+                //SetQuestion();
                 counter++;
             }
             else
@@ -264,6 +281,7 @@ namespace CourseworkUOG_Quiz
                 ply.realANSWER = qtn.realANSWER;
                 InsertAnsweredQuestionInSQL();
                 SetCategories();
+                //SetQuestion();
                 counter++;
             }
             else
@@ -301,6 +319,7 @@ namespace CourseworkUOG_Quiz
                 
                 InsertAnsweredQuestionInSQL();
                 SetCategories();
+                //SetQuestion();
                 counter++;
             }
             else
@@ -312,7 +331,7 @@ namespace CourseworkUOG_Quiz
 
             }
         }
-        public void InsertAnsweredQuestionInSQL()
+        private void InsertAnsweredQuestionInSQL()
         {
             //Data Source = server name
             //Initial Catalog = database name

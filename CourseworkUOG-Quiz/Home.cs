@@ -65,12 +65,12 @@ namespace CourseworkUOG_Quiz
                 {
                     MessageBox.Show("Please Select Categories");
                 }
-                string quizCategories = ply.quizCATEGORIES;
+                string quizCategories = ply.quizCATEGORIES.ToString();
                 int uId = ply.userID;
                 string cmdString = "INSERT INTO player_selection(user_id, quiz_categories) VALUES (@uId, @quizCategories)";
                 SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
                 sqlCmd.Parameters.AddWithValue("@uId", uId);
-                sqlCmd.Parameters.AddWithValue("@quizCategories", "jungle");
+                sqlCmd.Parameters.AddWithValue("@quizCategories", quizCategories);
                 sqlCmd.ExecuteNonQuery();
                 var newform = new Animation();
                 newform.Show();
