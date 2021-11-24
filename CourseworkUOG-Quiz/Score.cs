@@ -17,7 +17,7 @@ namespace CourseworkUOG_Quiz
         int y;
         Thread t;
         Player ply = new Player();
-        double score1, correct, total;
+        double score1, correct, total, totalScore;
         SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
         public Score()
         {
@@ -171,13 +171,15 @@ namespace CourseworkUOG_Quiz
             
             correct = double.Parse(ply.CorrectOfQuestion.ToString());
             total = double.Parse(ply.TotalOfQuestion.ToString());
-            score1 = (correct / total) * 100;
-            
+            //score1 = (correct / total) * 100;
+            RoundedCalculator cal = new RoundedCalculator();
+            score1 = cal.divide(correct, total);
+            totalScore = cal.mutliply(score1, 100);
         }
 
         private void ShowScoreAndName()
         {
-            lblTitle.Text = ply.userFIRSTNAME + " " + ply.userLASTNAME + " ,Your Score is " + Math.Round(score1,2) + "%";
+            lblTitle.Text = ply.userFIRSTNAME + " " + ply.userLASTNAME + " ,Your Score is " + totalScore + "%";
         }
 
         private void DeleteUserDataFromTable()

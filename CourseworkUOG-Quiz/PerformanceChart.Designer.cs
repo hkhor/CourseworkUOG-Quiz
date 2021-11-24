@@ -62,7 +62,7 @@ namespace CourseworkUOG_Quiz
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.chartPerformance);
             this.Name = "PerformanceChart";
-            this.Text = "Form1";
+            this.Text = "Performance Chart";
             ((System.ComponentModel.ISupportInitialize)(this.chartPerformance)).EndInit();
             this.ResumeLayout(false);
 

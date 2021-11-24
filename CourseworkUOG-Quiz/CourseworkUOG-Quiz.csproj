@@ -53,6 +53,7 @@
     <Compile Include="AdminPage.Designer.cs">
       <DependentUpon>AdminPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="ICalculator.cs" />
     <Compile Include="PerformanceChart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedCalculator.cs" />
     <Compile Include="Score.cs">
       <SubType>Form</SubType>
     </Compile>
