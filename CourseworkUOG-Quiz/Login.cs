@@ -20,8 +20,30 @@ namespace CourseworkUOG_Quiz
         public Login()
         {
             InitializeComponent();
+            DeleteUserDataFromTable();
         }
 
+        private void DeleteUserDataFromTable()
+        {
+            //Data Source = server name
+            //Initial Catalog = database name
+            SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
+            try
+            {
+                sqlCon.Open();
+                //always start with Command
+                string cmdString = "DELETE FROM score";
+                SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
+                sqlCmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
+            sqlCon.Close();
+        }
         private void btbRegister_Click(object sender, EventArgs e)
         {
             this.Hide();

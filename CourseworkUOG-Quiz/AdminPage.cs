@@ -21,6 +21,20 @@ namespace CourseworkUOG_Quiz
             ShowQuestionList();
         }
 
+        private void ClearFields()
+        {
+            cmbAnimalCategory.Text = "";
+            cmbAnswerType.Text = "";
+            txtAns1.Text = "";
+            txtAns2.Text = "";
+            txtAns3.Text = "";
+            txtAns4.Text = "";
+            txtQuizID.Text = "";
+            lblFileName.Text = "FileName";
+            txtQuestion.Text = "";
+            txtRealAnswer.Text = "";
+        }
+
         private void btnAddImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog opf = new OpenFileDialog();
@@ -83,6 +97,8 @@ namespace CourseworkUOG_Quiz
                         MessageBox.Show("Sucessfully Inserted");
                     }
                     ShowQuestionList();
+                    ClearFields();
+
 
                 }
                 else
@@ -125,6 +141,7 @@ namespace CourseworkUOG_Quiz
                     int RowsAffected = sqlCmd.ExecuteNonQuery();
                     MessageBox.Show("Sucessfully Modified");
                     ShowQuestionList();
+                    ClearFields();
 
                 }
                 else
@@ -159,6 +176,7 @@ namespace CourseworkUOG_Quiz
                 sqlCmd.ExecuteNonQuery();
                 MessageBox.Show("Data Deleted");
                 ShowQuestionList();
+                ClearFields();
 
             }
             catch (Exception ex)
@@ -167,6 +185,11 @@ namespace CourseworkUOG_Quiz
 
             }
             sqlCon.Close();
+        }
+
+        private void btnClearFields_Click(object sender, EventArgs e)
+        {
+            ClearFields();
         }
     }
 }

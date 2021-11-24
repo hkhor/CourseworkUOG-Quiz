@@ -53,79 +53,87 @@ namespace CourseworkUOG_Quiz
             this.lblFileName = new System.Windows.Forms.Label();
             this.lblRealAnswer = new System.Windows.Forms.Label();
             this.txtRealAnswer = new System.Windows.Forms.TextBox();
+            this.btnClearFields = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestionList)).BeginInit();
             this.SuspendLayout();
             // 
             // lblQuizId
             // 
             this.lblQuizId.AutoSize = true;
-            this.lblQuizId.Location = new System.Drawing.Point(49, 48);
+            this.lblQuizId.Location = new System.Drawing.Point(37, 39);
+            this.lblQuizId.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblQuizId.Name = "lblQuizId";
-            this.lblQuizId.Size = new System.Drawing.Size(53, 16);
+            this.lblQuizId.Size = new System.Drawing.Size(45, 13);
             this.lblQuizId.TabIndex = 1;
             this.lblQuizId.Text = "Quiz ID ";
             // 
             // lblAnimalCategory
             // 
             this.lblAnimalCategory.AutoSize = true;
-            this.lblAnimalCategory.Location = new System.Drawing.Point(49, 87);
+            this.lblAnimalCategory.Location = new System.Drawing.Point(37, 71);
+            this.lblAnimalCategory.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnimalCategory.Name = "lblAnimalCategory";
-            this.lblAnimalCategory.Size = new System.Drawing.Size(107, 16);
+            this.lblAnimalCategory.Size = new System.Drawing.Size(83, 13);
             this.lblAnimalCategory.TabIndex = 2;
             this.lblAnimalCategory.Text = "Animal Category";
             // 
             // lblAnswerType
             // 
             this.lblAnswerType.AutoSize = true;
-            this.lblAnswerType.Location = new System.Drawing.Point(49, 130);
+            this.lblAnswerType.Location = new System.Drawing.Point(37, 106);
+            this.lblAnswerType.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnswerType.Name = "lblAnswerType";
-            this.lblAnswerType.Size = new System.Drawing.Size(87, 16);
+            this.lblAnswerType.Size = new System.Drawing.Size(69, 13);
             this.lblAnswerType.TabIndex = 3;
             this.lblAnswerType.Text = "Answer Type";
             // 
             // lblAnswer1
             // 
             this.lblAnswer1.AutoSize = true;
-            this.lblAnswer1.Location = new System.Drawing.Point(49, 214);
+            this.lblAnswer1.Location = new System.Drawing.Point(37, 174);
+            this.lblAnswer1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnswer1.Name = "lblAnswer1";
-            this.lblAnswer1.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer1.Size = new System.Drawing.Size(51, 13);
             this.lblAnswer1.TabIndex = 4;
             this.lblAnswer1.Text = "Answer 1";
             // 
             // lblAnswer2
             // 
             this.lblAnswer2.AutoSize = true;
-            this.lblAnswer2.Location = new System.Drawing.Point(49, 257);
+            this.lblAnswer2.Location = new System.Drawing.Point(37, 209);
+            this.lblAnswer2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnswer2.Name = "lblAnswer2";
-            this.lblAnswer2.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer2.Size = new System.Drawing.Size(51, 13);
             this.lblAnswer2.TabIndex = 5;
             this.lblAnswer2.Text = "Answer 2";
             // 
             // lblAnswer3
             // 
             this.lblAnswer3.AutoSize = true;
-            this.lblAnswer3.Location = new System.Drawing.Point(49, 298);
+            this.lblAnswer3.Location = new System.Drawing.Point(37, 242);
+            this.lblAnswer3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnswer3.Name = "lblAnswer3";
-            this.lblAnswer3.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer3.Size = new System.Drawing.Size(51, 13);
             this.lblAnswer3.TabIndex = 6;
             this.lblAnswer3.Text = "Answer 3";
             // 
             // lblAnswer4
             // 
             this.lblAnswer4.AutoSize = true;
-            this.lblAnswer4.Location = new System.Drawing.Point(49, 343);
+            this.lblAnswer4.Location = new System.Drawing.Point(37, 279);
+            this.lblAnswer4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAnswer4.Name = "lblAnswer4";
-            this.lblAnswer4.Size = new System.Drawing.Size(62, 16);
+            this.lblAnswer4.Size = new System.Drawing.Size(51, 13);
             this.lblAnswer4.TabIndex = 7;
             this.lblAnswer4.Text = "Answer 4";
             // 
             // txtQuizID
             // 
-            this.txtQuizID.Location = new System.Drawing.Point(164, 42);
-            this.txtQuizID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtQuizID.Location = new System.Drawing.Point(123, 34);
+            this.txtQuizID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQuizID.Name = "txtQuizID";
             this.txtQuizID.ReadOnly = true;
-            this.txtQuizID.Size = new System.Drawing.Size(121, 22);
+            this.txtQuizID.Size = new System.Drawing.Size(92, 20);
             this.txtQuizID.TabIndex = 8;
             // 
             // cmbAnimalCategory
@@ -135,10 +143,10 @@ namespace CourseworkUOG_Quiz
             "jungle",
             "bird",
             "aquatic"});
-            this.cmbAnimalCategory.Location = new System.Drawing.Point(164, 79);
-            this.cmbAnimalCategory.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAnimalCategory.Location = new System.Drawing.Point(123, 64);
+            this.cmbAnimalCategory.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbAnimalCategory.Name = "cmbAnimalCategory";
-            this.cmbAnimalCategory.Size = new System.Drawing.Size(122, 24);
+            this.cmbAnimalCategory.Size = new System.Drawing.Size(92, 21);
             this.cmbAnimalCategory.TabIndex = 9;
             // 
             // cmbAnswerType
@@ -148,51 +156,51 @@ namespace CourseworkUOG_Quiz
             this.cmbAnswerType.Items.AddRange(new object[] {
             "Mutliple",
             "Fill"});
-            this.cmbAnswerType.Location = new System.Drawing.Point(164, 122);
-            this.cmbAnswerType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cmbAnswerType.Location = new System.Drawing.Point(123, 99);
+            this.cmbAnswerType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cmbAnswerType.Name = "cmbAnswerType";
-            this.cmbAnswerType.Size = new System.Drawing.Size(122, 24);
+            this.cmbAnswerType.Size = new System.Drawing.Size(92, 21);
             this.cmbAnswerType.TabIndex = 10;
             // 
             // txtAns1
             // 
-            this.txtAns1.Location = new System.Drawing.Point(164, 207);
-            this.txtAns1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAns1.Location = new System.Drawing.Point(123, 168);
+            this.txtAns1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAns1.Name = "txtAns1";
-            this.txtAns1.Size = new System.Drawing.Size(121, 22);
+            this.txtAns1.Size = new System.Drawing.Size(92, 20);
             this.txtAns1.TabIndex = 11;
             // 
             // txtAns2
             // 
-            this.txtAns2.Location = new System.Drawing.Point(164, 251);
-            this.txtAns2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAns2.Location = new System.Drawing.Point(123, 204);
+            this.txtAns2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAns2.Name = "txtAns2";
-            this.txtAns2.Size = new System.Drawing.Size(121, 22);
+            this.txtAns2.Size = new System.Drawing.Size(92, 20);
             this.txtAns2.TabIndex = 12;
             // 
             // txtAns3
             // 
-            this.txtAns3.Location = new System.Drawing.Point(164, 290);
-            this.txtAns3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAns3.Location = new System.Drawing.Point(123, 236);
+            this.txtAns3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAns3.Name = "txtAns3";
-            this.txtAns3.Size = new System.Drawing.Size(121, 22);
+            this.txtAns3.Size = new System.Drawing.Size(92, 20);
             this.txtAns3.TabIndex = 13;
             // 
             // txtAns4
             // 
-            this.txtAns4.Location = new System.Drawing.Point(164, 337);
-            this.txtAns4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtAns4.Location = new System.Drawing.Point(123, 274);
+            this.txtAns4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAns4.Name = "txtAns4";
-            this.txtAns4.Size = new System.Drawing.Size(121, 22);
+            this.txtAns4.Size = new System.Drawing.Size(92, 20);
             this.txtAns4.TabIndex = 14;
             // 
             // btnAddImage
             // 
-            this.btnAddImage.Location = new System.Drawing.Point(232, 459);
-            this.btnAddImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddImage.Location = new System.Drawing.Point(174, 373);
+            this.btnAddImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddImage.Name = "btnAddImage";
-            this.btnAddImage.Size = new System.Drawing.Size(97, 32);
-            this.btnAddImage.TabIndex = 15;
+            this.btnAddImage.Size = new System.Drawing.Size(73, 26);
+            this.btnAddImage.TabIndex = 16;
             this.btnAddImage.Text = "Add Image";
             this.btnAddImage.UseVisualStyleBackColor = true;
             this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
@@ -200,48 +208,49 @@ namespace CourseworkUOG_Quiz
             // Question
             // 
             this.Question.AutoSize = true;
-            this.Question.Location = new System.Drawing.Point(49, 175);
+            this.Question.Location = new System.Drawing.Point(37, 142);
+            this.Question.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Question.Name = "Question";
-            this.Question.Size = new System.Drawing.Size(61, 16);
+            this.Question.Size = new System.Drawing.Size(49, 13);
             this.Question.TabIndex = 16;
             this.Question.Text = "Question";
             // 
             // txtQuestion
             // 
-            this.txtQuestion.Location = new System.Drawing.Point(164, 170);
-            this.txtQuestion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtQuestion.Location = new System.Drawing.Point(123, 138);
+            this.txtQuestion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtQuestion.Name = "txtQuestion";
-            this.txtQuestion.Size = new System.Drawing.Size(288, 22);
+            this.txtQuestion.Size = new System.Drawing.Size(217, 20);
             this.txtQuestion.TabIndex = 17;
             // 
             // btnModifyImage
             // 
-            this.btnModifyImage.Location = new System.Drawing.Point(129, 519);
-            this.btnModifyImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnModifyImage.Location = new System.Drawing.Point(97, 422);
+            this.btnModifyImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnModifyImage.Name = "btnModifyImage";
-            this.btnModifyImage.Size = new System.Drawing.Size(97, 31);
-            this.btnModifyImage.TabIndex = 18;
+            this.btnModifyImage.Size = new System.Drawing.Size(73, 25);
+            this.btnModifyImage.TabIndex = 21;
             this.btnModifyImage.Text = "Modify";
             this.btnModifyImage.UseVisualStyleBackColor = true;
             this.btnModifyImage.Click += new System.EventHandler(this.btnModifyImage_Click);
             // 
             // btnDeleteImage
             // 
-            this.btnDeleteImage.Location = new System.Drawing.Point(232, 519);
-            this.btnDeleteImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteImage.Location = new System.Drawing.Point(174, 422);
+            this.btnDeleteImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnDeleteImage.Name = "btnDeleteImage";
-            this.btnDeleteImage.Size = new System.Drawing.Size(97, 31);
-            this.btnDeleteImage.TabIndex = 19;
+            this.btnDeleteImage.Size = new System.Drawing.Size(73, 25);
+            this.btnDeleteImage.TabIndex = 22;
             this.btnDeleteImage.Text = "Delete";
             this.btnDeleteImage.UseVisualStyleBackColor = true;
             this.btnDeleteImage.Click += new System.EventHandler(this.btnDeleteImage_Click);
             // 
             // btnInsert
             // 
-            this.btnInsert.Location = new System.Drawing.Point(26, 519);
-            this.btnInsert.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInsert.Location = new System.Drawing.Point(20, 422);
+            this.btnInsert.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(97, 31);
+            this.btnInsert.Size = new System.Drawing.Size(73, 25);
             this.btnInsert.TabIndex = 20;
             this.btnInsert.Text = "Insert";
             this.btnInsert.UseVisualStyleBackColor = true;
@@ -253,42 +262,58 @@ namespace CourseworkUOG_Quiz
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewQuestionList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewQuestionList.Location = new System.Drawing.Point(481, 42);
+            this.dataGridViewQuestionList.Location = new System.Drawing.Point(361, 34);
+            this.dataGridViewQuestionList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewQuestionList.Name = "dataGridViewQuestionList";
             this.dataGridViewQuestionList.RowTemplate.Height = 24;
-            this.dataGridViewQuestionList.Size = new System.Drawing.Size(800, 606);
+            this.dataGridViewQuestionList.Size = new System.Drawing.Size(600, 492);
             this.dataGridViewQuestionList.TabIndex = 21;
             this.dataGridViewQuestionList.Click += new System.EventHandler(this.dataGridViewQuestionList_Click);
             // 
             // lblFileName
             // 
-            this.lblFileName.Location = new System.Drawing.Point(49, 467);
+            this.lblFileName.Location = new System.Drawing.Point(37, 379);
+            this.lblFileName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFileName.Name = "lblFileName";
-            this.lblFileName.Size = new System.Drawing.Size(184, 18);
+            this.lblFileName.Size = new System.Drawing.Size(138, 15);
             this.lblFileName.TabIndex = 22;
             this.lblFileName.Text = "FileName";
             // 
             // lblRealAnswer
             // 
-            this.lblRealAnswer.Location = new System.Drawing.Point(49, 391);
+            this.lblRealAnswer.Location = new System.Drawing.Point(37, 318);
+            this.lblRealAnswer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRealAnswer.Name = "lblRealAnswer";
-            this.lblRealAnswer.Size = new System.Drawing.Size(87, 23);
+            this.lblRealAnswer.Size = new System.Drawing.Size(65, 19);
             this.lblRealAnswer.TabIndex = 23;
             this.lblRealAnswer.Text = "Real Answer";
             // 
             // txtRealAnswer
             // 
-            this.txtRealAnswer.Location = new System.Drawing.Point(164, 388);
+            this.txtRealAnswer.Location = new System.Drawing.Point(123, 315);
+            this.txtRealAnswer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtRealAnswer.Name = "txtRealAnswer";
-            this.txtRealAnswer.Size = new System.Drawing.Size(121, 22);
-            this.txtRealAnswer.TabIndex = 24;
+            this.txtRealAnswer.Size = new System.Drawing.Size(92, 20);
+            this.txtRealAnswer.TabIndex = 15;
+            // 
+            // btnClearFields
+            // 
+            this.btnClearFields.Location = new System.Drawing.Point(251, 422);
+            this.btnClearFields.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearFields.Name = "btnClearFields";
+            this.btnClearFields.Size = new System.Drawing.Size(73, 25);
+            this.btnClearFields.TabIndex = 25;
+            this.btnClearFields.Text = "Clear";
+            this.btnClearFields.UseVisualStyleBackColor = true;
+            this.btnClearFields.Click += new System.EventHandler(this.btnClearFields_Click);
             // 
             // AdminPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1350, 729);
+            this.ClientSize = new System.Drawing.Size(1012, 592);
+            this.Controls.Add(this.btnClearFields);
             this.Controls.Add(this.txtRealAnswer);
             this.Controls.Add(this.lblRealAnswer);
             this.Controls.Add(this.lblFileName);
@@ -313,7 +338,7 @@ namespace CourseworkUOG_Quiz
             this.Controls.Add(this.lblAnswerType);
             this.Controls.Add(this.lblAnimalCategory);
             this.Controls.Add(this.lblQuizId);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AdminPage";
             this.Text = "AdminPage";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewQuestionList)).EndInit();
@@ -347,5 +372,6 @@ namespace CourseworkUOG_Quiz
         private System.Windows.Forms.Label lblFileName;
         private System.Windows.Forms.Label lblRealAnswer;
         private System.Windows.Forms.TextBox txtRealAnswer;
+        private System.Windows.Forms.Button btnClearFields;
     }
 }

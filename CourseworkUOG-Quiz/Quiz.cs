@@ -18,7 +18,7 @@ namespace CourseworkUOG_Quiz
     {
         Player ply = new Player();
         Question qtn = new Question();
-        public int counter;
+        public int counter = 0;
 
         SqlConnection sqlCon = new SqlConnection("Data Source=MAS-CHKHOR-NB;Initial Catalog=animalQuiz;Integrated Security=True");
         public Quiz()
@@ -26,6 +26,8 @@ namespace CourseworkUOG_Quiz
             InitializeComponent();
             GetPlayerSelectionFromDatabase();
             SetCategories();
+            SetQuestions();
+            //FirstTime();
             //SetQuestion();
         }
         private void GetPlayerSelectionFromDatabase()
@@ -57,8 +59,20 @@ namespace CourseworkUOG_Quiz
             }
         }
 
-        private void SetCategories()
+        private void ParseQuestions()
         {
+            ply.noOFQUESTION = counter + 1;
+            ply.quizQUESTION = qtn.quizQUESTION;
+            ply.ANS1 = qtn.ansORDER1;
+            ply.ANS2 = qtn.ansORDER2;
+            ply.ANS3 = qtn.ansORDER3;
+            ply.ANS4 = qtn.ansORDER4;
+            InsertAnsweredQuestionInSQL();
+        }
+
+        private void SetCategories()
+        { 
+            
 
             try
             {
@@ -84,45 +98,6 @@ namespace CourseworkUOG_Quiz
 
                 }
 
-                lblTitle.Text = "Question" + (counter + 1);
-                if (qtn.quizTYPE == "Mutliple")
-                {
-                    //MessageBox.Show(qtn.imgFILEPATH);
-                    txtFillAnswer.Hide();
-                    btnAns5.Hide();
-                    btnAns1.Show();
-                    btnAns2.Show();
-                    btnAns3.Show();
-                    btnAns4.Show();
-                    picBox.Image = new Bitmap(qtn.imgFILEPATH);
-                    lblQuestion.Text = qtn.quizQUESTION;
-                    btnAns1.Text = qtn.ansORDER1;
-                    btnAns2.Text = qtn.ansORDER2;
-                    btnAns3.Text = qtn.ansORDER3;
-                    btnAns4.Text = qtn.ansORDER4;
-                }
-                else if (qtn.quizTYPE == "Fill")
-                {
-                    //MessageBox.Show(qtn.imgFILEPATH);
-                    btnAns1.Hide();
-                    btnAns2.Hide();
-                    btnAns3.Hide();
-                    btnAns4.Hide();
-                    txtFillAnswer.Show();
-                    lblQuestion.Show();
-                    btnAns5.Show();
-                    picBox.Image = new Bitmap(qtn.imgFILEPATH);
-                    txtFillAnswer.Text = "Enter Answer Here";
-                    lblQuestion.Text = qtn.quizQUESTION;
-                    btnAns5.Text = "Submit";
-
-                }
-                else
-                {
-                    MessageBox.Show("Show Me Some Error");
-                }
-
-
             }
             catch (Exception ex)
             {
@@ -135,202 +110,154 @@ namespace CourseworkUOG_Quiz
 
         }
 
-        private void SetQuestion()
+        private void SetQuestions()
         {
-            try
+            if (qtn.quizTYPE == "Mutliple")
             {
+                //MessageBox.Show(qtn.imgFILEPATH);
+                txtFillAnswer.Hide();
+                btnAns5.Hide();
+                btnAns1.Show();
+                btnAns2.Show();
+                btnAns3.Show();
+                btnAns4.Show();
+                picBox.Image = new Bitmap(qtn.imgFILEPATH);
+                lblTitle.Text = "Questions " + (counter + 1);
+                lblQuestion.Text = qtn.quizQUESTION;
+                btnAns1.Text = qtn.ansORDER1;
+                btnAns2.Text = qtn.ansORDER2;
+                btnAns3.Text = qtn.ansORDER3;
+                btnAns4.Text = qtn.ansORDER4;
+                ply.realANSWER = qtn.realANSWER;
+            }
+            else if (qtn.quizTYPE == "Fill")
+            {
+                //MessageBox.Show(qtn.imgFILEPATH);
+                btnAns1.Hide();
+                btnAns2.Hide();
+                btnAns3.Hide();
+                btnAns4.Hide();
+                txtFillAnswer.Show();
+                lblQuestion.Show();
+                btnAns5.Show();
+                picBox.Image = new Bitmap(qtn.imgFILEPATH);
+                lblTitle.Text = "Questions " + (counter + 1);
+                txtFillAnswer.Text = "Enter Answer Here";
+                lblQuestion.Text = qtn.quizQUESTION;
+                btnAns5.Text = "Submit";
+                ply.realANSWER = qtn.realANSWER;
 
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Show Me Some Error");
             }
+            counter++;
         }
+
 
         private void btnAns1_Click(object sender, EventArgs e)
         {
-            if (counter != 14) {
-                if (btnAns1.Text != qtn.realANSWER)
-                {
-                    MessageBox.Show("Wrong!");
-                    ply.AnsCorrectWrong = "WRONG";
-                }
-                else
-                {
-                    MessageBox.Show("Correct!");
-                    ply.AnsCorrectWrong = "CORRECT";
-                }
-
-                ply.selectedANSWER = btnAns1.Text;
-                ply.noOFQUESTION = counter + 1;
-                ply.quizQUESTION = qtn.quizQUESTION;
-                ply.ANS1 = qtn.ansORDER1;
-                ply.ANS2 = qtn.ansORDER2;
-                ply.ANS3 = qtn.ansORDER3;
-                ply.ANS4 = qtn.ansORDER4;
-                ply.realANSWER = qtn.realANSWER;
-                InsertAnsweredQuestionInSQL();
-                SetCategories();
-                //SetQuestion();
-                counter++;
+            
+            if (btnAns1.Text != ply.realANSWER)
+            {
+                MessageBox.Show("Wrong!");
+                ply.AnsCorrectWrong = "WRONG";
             }
-            else{
-                counter = 0;
-                this.Hide();
-                Score score = new Score();
-                score.Show();
+            else
+            {
+                MessageBox.Show("Correct!");
+                ply.AnsCorrectWrong = "CORRECT";
             }
+            ply.selectedANSWER = btnAns1.Text;
+            QuestionCounter();
         }
 
         private void btnAns2_Click(object sender, EventArgs e)
         {
-            if (counter != 14)
+            if (btnAns2.Text != ply.realANSWER)
             {
-                if (btnAns2.Text != qtn.realANSWER)
-                {
-                    MessageBox.Show("Wrong!");
-                    ply.AnsCorrectWrong = "WRONG";
-                }
-                else
-                {
-                    MessageBox.Show("Correct!");
-                    ply.AnsCorrectWrong = "CORRECT";
-                }
-
-                ply.selectedANSWER = btnAns2.Text;
-                ply.noOFQUESTION = counter + 1;
-                ply.quizQUESTION = qtn.quizQUESTION;
-                ply.ANS1 = qtn.ansORDER1;
-                ply.ANS2 = qtn.ansORDER2;
-                ply.ANS3 = qtn.ansORDER3;
-                ply.ANS4 = qtn.ansORDER4;
-                ply.realANSWER = qtn.realANSWER;
-                InsertAnsweredQuestionInSQL();
-                SetCategories();
-                //SetQuestion();
-                counter++;
+                MessageBox.Show("Wrong!");
+                ply.AnsCorrectWrong = "WRONG";
             }
             else
             {
-                counter = 0;
-                this.Hide();
-                Score score = new Score();
-                score.Show();
+                MessageBox.Show("Correct!");
+                ply.AnsCorrectWrong = "CORRECT";
             }
+            ply.selectedANSWER = btnAns2.Text;
+            QuestionCounter();
         }
 
         private void btnAns3_Click(object sender, EventArgs e)
         {
-            if (counter != 14)
+            if (btnAns3.Text != ply.realANSWER)
             {
-                if (btnAns3.Text != qtn.realANSWER)
-                {
-                    MessageBox.Show("Wrong!");
-                    ply.AnsCorrectWrong = "WRONG";
-                }
-                else
-                {
-                    MessageBox.Show("Correct!");
-                    ply.AnsCorrectWrong = "CORRECT";
-                }
-
-                ply.selectedANSWER = btnAns3.Text;
-                ply.noOFQUESTION = counter + 1;
-                ply.quizQUESTION = qtn.quizQUESTION;
-                ply.ANS1 = qtn.ansORDER1;
-                ply.ANS2 = qtn.ansORDER2;
-                ply.ANS3 = qtn.ansORDER3;
-                ply.ANS4 = qtn.ansORDER4;
-                ply.realANSWER = qtn.realANSWER;
-                InsertAnsweredQuestionInSQL();
-                SetCategories();
-                //SetQuestion();
-                counter++;
+                MessageBox.Show("Wrong!");
+                ply.AnsCorrectWrong = "WRONG";
             }
             else
             {
-                counter = 0;
-                this.Hide();
-                Score score = new Score();
-                score.Show();
+                MessageBox.Show("Correct!");
+                ply.AnsCorrectWrong = "CORRECT";
             }
+            ply.selectedANSWER = btnAns3.Text;
+            QuestionCounter();
         }
 
         private void btnAns4_Click(object sender, EventArgs e)
         {
-            if (counter != 14)
+            if (btnAns4.Text != ply.realANSWER)
             {
-                if (btnAns4.Text != qtn.realANSWER)
-                {
-                    MessageBox.Show("Wrong!");
-                    ply.AnsCorrectWrong = "WRONG";
-                }
-                else
-                {
-                    MessageBox.Show("Correct!");
-                    ply.AnsCorrectWrong = "CORRECT";
-                }
-
-                ply.selectedANSWER = btnAns4.Text;
-                ply.noOFQUESTION = counter + 1;
-                ply.quizQUESTION = qtn.quizQUESTION;
-                ply.ANS1 = qtn.ansORDER1;
-                ply.ANS2 = qtn.ansORDER2;
-                ply.ANS3 = qtn.ansORDER3;
-                ply.ANS4 = qtn.ansORDER4;
-                ply.realANSWER = qtn.realANSWER;
-                InsertAnsweredQuestionInSQL();
-                SetCategories();
-                //SetQuestion();
-                counter++;
+                MessageBox.Show("Wrong!");
+                ply.AnsCorrectWrong = "WRONG";
             }
             else
             {
-                counter = 0;
-                this.Hide();
-                Score score = new Score();
-                score.Show();
+                MessageBox.Show("Correct!");
+                ply.AnsCorrectWrong = "CORRECT";
             }
+            ply.selectedANSWER = btnAns4.Text;
+            QuestionCounter();
         }
 
         private void btnAns5_Click(object sender, EventArgs e)
         {
-            if (counter != 14)
+            if (txtFillAnswer.Text != ply.realANSWER)
             {
-                if (txtFillAnswer.Text != qtn.realANSWER)
-                {
-                    MessageBox.Show("Wrong!");
-                    ply.AnsCorrectWrong = "WRONG";
-                }
-                else
-                {
-                    MessageBox.Show("Correct!");
-                    ply.AnsCorrectWrong = "CORRECT";
-                }
-
-                ply.selectedANSWER = btnAns5.Text;
-                ply.noOFQUESTION = counter + 1;
-                ply.quizQUESTION = qtn.quizQUESTION;
-                ply.ANS1 = qtn.ansORDER1;
-                ply.ANS2 = qtn.ansORDER2;
-                ply.ANS3 = qtn.ansORDER3;
-                ply.ANS4 = qtn.ansORDER4;
-                ply.realANSWER = qtn.realANSWER;
-                
-                InsertAnsweredQuestionInSQL();
-                SetCategories();
-                //SetQuestion();
-                counter++;
+                MessageBox.Show("Wrong!");
+                ply.AnsCorrectWrong = "WRONG";
             }
             else
             {
+                MessageBox.Show("Correct!");
+                ply.AnsCorrectWrong = "CORRECT";
+            }
+            ply.selectedANSWER = txtFillAnswer.Text;
+            QuestionCounter();
+        }
+
+        private void QuestionCounter()
+        {
+            if (counter != 15)
+            {
+                ParseQuestions();
+                SetCategories();
+                SetQuestions();
+                //SetQuestion();
+            }
+            else
+            {
+                ParseQuestions();
                 counter = 0;
                 this.Hide();
                 Score score = new Score();
                 score.Show();
 
             }
+
         }
+
         private void InsertAnsweredQuestionInSQL()
         {
             //Data Source = server name
@@ -342,7 +269,7 @@ namespace CourseworkUOG_Quiz
                 string cmdString = "INSERT INTO score(sId,userId,quizQuestion,ans1,ans2,ans3,ans4,realAnswer,selectedAnswer,ansCorrectOrWrong) VALUES (@sId,@userId, @quizQuestion, @ans1, @ans2, @ans3, @ans4, @realAnswer, @selectedAnswer,@ansCorrectOrWrong)";
                 SqlCommand sqlCmd = new SqlCommand(cmdString, sqlCon);
                 //sqlCmd.Parameters.AddWithValue("@sId", ply.noOFQUESTION);
-                sqlCmd.Parameters.AddWithValue("@sId",(counter+1));
+                sqlCmd.Parameters.AddWithValue("@sId",counter);
                 sqlCmd.Parameters.AddWithValue("@userId", ply.userID);
                 sqlCmd.Parameters.AddWithValue("@quizQuestion", ply.quizQUESTION);
                 sqlCmd.Parameters.AddWithValue("@ans1", ply.ANS1);
@@ -350,7 +277,7 @@ namespace CourseworkUOG_Quiz
                 sqlCmd.Parameters.AddWithValue("@ans3", ply.ANS3);
                 sqlCmd.Parameters.AddWithValue("@ans4", ply.ANS4);
                 sqlCmd.Parameters.AddWithValue("@realAnswer", ply.realANSWER);
-                sqlCmd.Parameters.AddWithValue("@selectedAnswer", ply.realANSWER);
+                sqlCmd.Parameters.AddWithValue("@selectedAnswer", ply.selectedANSWER);
                 sqlCmd.Parameters.AddWithValue("@ansCorrectOrWrong", ply.AnsCorrectWrong);
                 sqlCmd.ExecuteNonQuery();
 
